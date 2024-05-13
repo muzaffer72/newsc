@@ -47,7 +47,7 @@ echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━�
 echo -e ""
 sleep 5
 MYIP=$(wget -qO- icanhazip.com);
-IZIN=$( curl https://mrtunneldo2024.github.io/izin| grep $MYIP )
+IZIN=$( curl https://mrtunneldo2024.github.io/ip| grep $MYIP )
 echo "Memeriksa Hak Akses VPS..."
 if [ $MYIP = $IZIN ]; then
 clear
