@@ -13,7 +13,7 @@ LIGHT='\033[0;37m'
 # ==========================================
 # Getting
 export CHATID="923915481"
-export KEY="6100820648:AAH6m5Zo9P3X9CEAzUYjazrCac4g1tFa45A"
+export KEY="8068817658:AAFg9G7lJq7UMoF94EN8ihraoT5DQaJgbfw"
 export TIME="10"
 export URL="https://api.telegram.org/bot$KEY/sendMessage"
 clear
