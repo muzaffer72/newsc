@@ -51,7 +51,7 @@ echo -e "Script By BZ TUNNELLING "
 echo -e "Whatsapp      : wa.me/6287728411949 "
 echo -e "Telegram      : t.me/anuybazoelk "
 echo ""
-read -p "Select From Options [ 1 - 13 ] : " menu "
+read -p "Select From Options [ 1 - 13 ] :  menu "
 case $menu in
 1)
 clear
