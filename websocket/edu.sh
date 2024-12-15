@@ -14,7 +14,7 @@ CYAN='\033[0;37m'
 # ==========================================
 # Getting
 MYIP=$(wget -qO- icanhazip.com);
-IZIN=$( curl https://anuy639.github.io/izin | grep $MYIP )
+IZIN=$( curl https://mrtunneldo2024.github.io/ip | grep $MYIP )
 echo "Memeriksa Hak Akses VPS..."
 if [ $MYIP = $IZIN ]; then
 echo -e "${NC}${GREEN}Permission Accepted...${NC}"
@@ -34,7 +34,7 @@ echo "Checking VPS"
 clear
 
 # Getting Proxy Template
-wget -q -O /usr/local/bin/ws-nontls https://raw.githubusercontent.com/anuy639/sc/main/websocket/websocket.py
+wget -q -O /usr/local/bin/ws-nontls https://raw.githubusercontent.com/mrtunneldo2024/newsc/refs/heads/main/websocket/websocket.py
 chmod +x /usr/local/bin/ws-nontls
 
 # Installing Service
@@ -62,7 +62,7 @@ systemctl enable ws-nontls
 systemctl restart ws-nontls
 
 # Getting Proxy Template
-wget -q -O /usr/local/bin/ws-ovpn https://raw.githubusercontent.com/anuy639/sc/main/websocket/ws-ovpn.py
+wget -q -O /usr/local/bin/ws-ovpn https://raw.githubusercontent.com/mrtunneldo2024/newsc/refs/heads/main/websocket/ws-ovpn.py
 chmod +x /usr/local/bin/ws-ovpn
 
 # Installing Service
@@ -90,7 +90,7 @@ systemctl enable ws-ovpn
 systemctl restart ws-ovpn
 
 # Getting Proxy Template
-wget -q -O /usr/local/bin/ws-tls https://raw.githubusercontent.com/anuy639/sc/main/websocket/ws-tls
+wget -q -O /usr/local/bin/ws-tls https://raw.githubusercontent.com/mrtunneldo2024/newsc/refs/heads/main/websocket/ws-tls
 chmod +x /usr/local/bin/ws-tls
 
 # Installing Service
