@@ -13,45 +13,47 @@ blu='\e[34m'
 op='\e[35m'
 or='\033[1;33m'
 bd='\e[1m'
-color3='\e[031;1m'
-color1='\e[34;1m'
-color2='\e[0m'
+color1='\e[031;1m'
+color2='\e[34;1m'
+color3='\e[0m'
 # COLOR VALIDATION
-BLUE='\033[0;31m'
-RED='\033[0m'
+RED='\033[0;31m'
+NC='\033[0m'
 GREEN='\033[0;32m'
-CYAN='\033[0;33m'
+ORANGE='\033[0;33m'
 BLUE='\033[0;34m'
-RED='\033[0;35m'
-GREEN='\033[0;36m'
-CYAN='\033[0;37m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+LIGHT='\033[0;37m'
 # =========================================
 echo -e ""
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "\E[44;1;39m            ⇱ BZ TUNNELLING ⇲          \E[0m"
+echo -e "\E[44;1;39m          ⇱ Menu Utama NyariGratisan ⇲          \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e " Script By    : BZ TUNNELLING "
-echo -e " Exp          : Unlimited "
-echo -e " Version      : 0.01 "
+echo -e "❇️ Script By : NyariGratisan"
+echo -e "❇️ Exp Script  : Unlimited"
+echo -e "❇️ Version     : Latest Version"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e " 1)  SSH & OpenVPN MENU                                          "
-echo -e " 2)  VMESS MENU                                                   "
-echo -e " 3)  VLESS MENU                                                "
-echo -e " 4)  TROJAN TCP MENU                                                "
-echo -e " 5)  TROJAN GO MENU                                            "
-echo -e " 6)  CEK SERVICE MENU                                          "
-echo -e " 7)  PENGATURAN MENU                                          "
-echo -e " 8)  EDIT PATCH V2RAY                                                  "
-echo -e " 9)  CEK V2RAY                                               "
-echo -e " 10)  EXIT                                         "                                                         "
+echo -e "❇️ 1) SSH & OpenVPN MENU                                          "
+echo -e "❇️ 2) L2TP MENU                                                   "
+echo -e "❇️ 3) PPTP MENU                                                "
+echo -e "❇️ 4) SSTP MENU                                                "
+echo -e "❇️ 5) WIREGUARD MENU                                            "
+echo -e "❇️ 6) SHADOWSOCKS MENU                                          "
+echo -e "❇️ 7) SHADOWSOCKSR MENU                                          "
+echo -e "❇️ 8) VMESS MENU                                                 "
+echo -e "❇️ 9) VLESS MENU                                               "
+echo -e "❇️ 10) TROJAN GFW MENU                                         "
+echo -e "❇️ 11) TROJAN GO MENU                                            "
+echo -e "❇️ 12) CEK SERVICE VPS                                            "
+echo -e "❇️ 13) PENGATURAN                                                "
+echo -e "❇️ 14) CEK V2RAY "
+echo -e "❇️ 15) EDIT PATCH V2RAY "
+echo -e "❇️ 16) EXIT                                                        "
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "\E[44;1;39m            ⇱ Script By BZ TUNNELLING ⇲             \E[0m"
+echo -e "\E[44;1;39m            ⇱ Script By NyariGratisan ⇲             \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "Script By BZ TUNNELLING "
-echo -e "Whatsapp      : wa.me/6287728411949 "
-echo -e "Telegram      : t.me/anuybazoelk "
-echo ""
-read -p "Select From Options [ 1 - 13 ] :  menu "
+read -p "Select From Options [ 1 - 13 ] : " menu
 case $menu in
 1)
 clear
@@ -59,37 +61,61 @@ sshovpnmenu
 ;;
 2)
 clear
-vmessmenu
+l2tpmenu
 ;;
 3)
 clear
-vlessmenu
+pptpmenu
 ;;
 4)
 clear
-trmenu
+sstpmenu
 ;;
 5)
 clear
-trgomenu
+wgmenu
 ;;
 6)
 clear
-running
+ssmenu
 ;;
 7)
 clear
-setmenu
+ssrmenu
 ;;
 8)
 clear
-nano /etc/xray/config.json
+vmessmenu
 ;;
 9)
 clear
-cekxray
+vlessmenu
 ;;
 10)
+clear
+trmenu
+;;
+11)
+clear
+trgomenu
+;;
+12)
+clear
+running
+;;
+13)
+clear
+setmenu
+;;
+14)
+clear
+cekxray
+;;
+15)
+clear
+nano /etc/xray/config.json
+;;
+16)
 clear
 exit
 ;;
