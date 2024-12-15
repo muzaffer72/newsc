@@ -12,13 +12,13 @@ CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 # ==========================================
 # Getting
-export CHATID="923915481"
-export KEY="6100820648:AAH6m5Zo9P3X9CEAzUYjazrCac4g1tFa45A"
+export CHATID="1328284490"
+export KEY="8068817658:AAFg9G7lJq7UMoF94EN8ihraoT5DQaJgbfw"
 export TIME="10"
 export URL="https://api.telegram.org/bot$KEY/sendMessage"
 clear
 MYIP=$(wget -qO- icanhazip.com);
-IZIN=$( curl https://anuy639.github.io/izin | grep $MYIP )
+IZIN=$( curl https://mrtunneldo2024.github.io/ip | grep $MYIP )
 echo "Memeriksa Hak Akses VPS..."
 if [ $MYIP = $IZIN ]; then
 echo -e "${NC}${GREEN}Permission Accepted...${NC}"
