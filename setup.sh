@@ -41,7 +41,7 @@ echo -e ""
 sleep 2
 mkdir /var/lib/bztunnelling;
 echo "IP=" >> /var/lib/bztunnelling/ipvps.conf
-wget https://raw.githubusercontent.com/BzTunnelling/sc/main/ssh/cf.sh && chmod +x cf.sh && ./cf.sh
+wget https://raw.githubusercontent.com/mrtunneldo2024/newsc/refs/heads/main/ssh/cf.sh && chmod +x cf.sh && ./cf.sh
 #install v2ray
 echo -e ""
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
@@ -49,7 +49,7 @@ echo -e "\E[44;1;39m		⇱ INSTALL V2RAY ⇲          \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e ""
 sleep 2
-wget https://raw.githubusercontent.com/BzTunnelling/sc/main/xray/ins-xray.sh && chmod +x ins-xray.sh && screen -S xray ./ins-xray.sh
+wget https://raw.githubusercontent.com/mrtunneldo2024/newsc/refs/heads/main/xray/ins-xray.sh && chmod +x ins-xray.sh && screen -S xray ./ins-xray.sh
 #install ssh ovpn
 echo -e ""
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
@@ -57,7 +57,7 @@ echo -e "\E[44;1;39m		⇱ INSTALL SSH-CDN ⇲          \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e ""
 sleep 2
-wget https://raw.githubusercontent.com/BzTunnelling/sc/main/ssh/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
+wget https://raw.githubusercontent.com/mrtunneldo2024/newsc/refs/heads/main/ssh/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
 #install BACKUP
 echo -e ""
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
@@ -65,7 +65,7 @@ echo -e "\E[44;1;39m		⇱ INSTALL BACKUP ⇲          \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e ""
 sleep 2
-wget https://raw.githubusercontent.com/BzTunnelling/sc/main/backup/set-br.sh && chmod +x set-br.sh && ./set-br.sh
+wget https://raw.githubusercontent.com/mrtunneldo2024/newsc/refs/heads/main/backup/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 # Websocket
 echo -e ""
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
@@ -73,7 +73,7 @@ echo -e "\E[44;1;39m		⇱ INSTALL WEBSOCKET ⇲          \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e ""
 sleep 2
-wget https://raw.githubusercontent.com/BzTunnelling/sc/main/websocket/edu.sh && chmod +x edu.sh && ./edu.sh
+wget https://raw.githubusercontent.com/mrtunneldo2024/newsc/refs/heads/main/websocket/edu.sh && chmod +x edu.sh && ./edu.sh
 
 rm -f /root/ssh-vpn.sh
 rm -f /root/ins-xray.sh
@@ -94,7 +94,7 @@ WantedBy=multi-user.target
 EOF
 systemctl daemon-reload
 systemctl enable autosett
-wget -O /etc/set.sh "https://raw.githubusercontent.com/BzTunnelling/sc/main/ssh/set.sh"
+wget -O /etc/set.sh "https://raw.githubusercontent.com/mrtunneldo2024/newsc/refs/heads/main/ssh/set.sh"
 chmod +x /etc/set.sh
 history -c
 echo "1.2" > /home/ver
