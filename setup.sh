@@ -59,7 +59,7 @@ chmod +x /etc/set.sh
 history -c
 echo "1.2"
 # // Zaman Dilimini Ayarla
-timedatectl set-timezone Asia/Jakarta
+timedatectl set-timezone Europe/Istanbul
 clear
 echo "For Setting Timeout"
 

@@ -133,7 +133,7 @@ apt install libssl1.0-dev -y
 apt install dos2unix -y
 
 # zamanı GMT +7 olarak ayarla
-ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+ln -fs /usr/share/zoneinfo/Europe/Istanbul /etc/localtime
 
 # yerel ayarları ayarla
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config

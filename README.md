@@ -88,7 +88,7 @@ rm -f setup.sh && sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ip
 • Trojan Go : 2087
 
 ## Server Information & Other Features
-• Timezone : Asia/Jakarta (GMT +7)
+• Timezone : Europe/Istanbul (GMT +3)
 
 • Fail2Ban : [ON]
 
@@ -100,7 +100,7 @@ rm -f setup.sh && sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ip
 
 • IPv6 : [OFF]
 
-• Autoreboot On 05.00 GMT +7
+• Autoreboot On 05.00 GMT +3
 
 • Auto Delete Expired Account
 
