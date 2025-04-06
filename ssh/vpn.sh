@@ -22,7 +22,7 @@ clear
 # By Muzaffer Şanlı
 # ==================================================
 # Link Hosting Kalian
-akbarvpn="raw.githubusercontent.com/myridwan/sc/ipuk/ssh"
+akbarvpn="raw.githubusercontent.com/muzaffer72/newsc/main/ssh"
 
 # initialisasi var
 export DEBIAN_FRONTEND=noninteractive

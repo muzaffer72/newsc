@@ -13,7 +13,7 @@ LIGHT='\033[0;37m'
 # ==========================================
 # Getting
 clear
-read -rp "ISI DOMAIN VPS ANDA YG UDH DIPOINTING :" -e SUB_DOMAIN
+read -rp "Alan adınızı girin :" -e SUB_DOMAIN
 echo "HOST VPS : $SUB_DOMAIN"
 echo $SUB_DOMAIN > /root/domain
 # / / Make Main Directory
