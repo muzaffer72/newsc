@@ -15,7 +15,7 @@ bd='\e[1m'
 color3='\e[031;1m'
 color1='\e[34;1m'
 color2='\e[0m'
-# COLOR VALIDATION
+# RENK DOĞRULAMA
 BLUE='\033[0;31m'
 RED='\033[0m'
 GREEN='\033[0;32m'
@@ -26,37 +26,37 @@ GREEN='\033[0;36m'
 CYAN='\033[0;37m'
 echo -e ""
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "\E[44;1;39m            ⇱ BZ TUNNELLING ⇲          \E[0m"
+echo -e "\E[44;1;39m            ⇱ HEPSİBİRARADAVPN ONVAO.NET ⇲          \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e ""
-echo -e "Script By    : BZ TUNNELLING "
-echo -e "Exp          : Unlimited "
-echo -e "Version      : 0.01 "
+echo -e "Betik Yazarı    : HEPSİBİRARADAVPN ONVAO.NET "
+echo -e "Süre          : Sınırsız "
+echo -e "Versiyon      : 0.01 "
 echo -e ""
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "\E[44;1;39m            ⇱ BZ TUNNELLING ⇲          \E[0m"
+echo -e "\E[44;1;39m            ⇱ HEPSİBİRARADAVPN ONVAO.NET ⇲          \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e " 1) Ganti Domain "
-echo -e " 2) Edit Port "
-echo -e " 3) Autobackup "
-echo -e " 4) Backup Data "
-echo -e " 5) Restore Data "
-echo -e " 6) Webmin Menu "
-echo -e " 7) Limit Bandwith Speed Server "
-echo -e " 8) Check Usage of VPS Ram "
-echo -e " 9) Reboot "
-echo -e " 10) Speedtest "
-echo -e " 11) Displaying System  "
-echo -e " 12) Info Script "
-echo -e " 13) Menu "
-echo -e " 14) EXIT "
+echo -e " 1) Alan Adı Değiştir "
+echo -e " 2) Port Düzenle "
+echo -e " 3) Otomatik Yedekleme "
+echo -e " 4) Veri Yedekleme "
+echo -e " 5) Veri Geri Yükleme "
+echo -e " 6) Webmin Menüsü "
+echo -e " 7) Sunucu Bant Genişliği Hızını Sınırla "
+echo -e " 8) VPS RAM Kullanımını Kontrol Et "
+echo -e " 9) Yeniden Başlat "
+echo -e " 10) Hız Testi "
+echo -e " 11) Sistem Bilgilerini Göster  "
+echo -e " 12) Betik Bilgisi "
+echo -e " 13) Menü "
+echo -e " 14) ÇIKIŞ "
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "\E[44;1;39m            ⇱ BZ TUNNELLING ⇲             \E[0m"
+echo -e "\E[44;1;39m            ⇱ HEPSİBİRARADAVPN ONVAO.NET ⇲             \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "Whatsapp      : wa.me/6287728411949 "
 echo -e "Telegram      : t.me/anuybazoelk "
 echo ""
-read -p "Select From Options [ 1 - 60 ] : " menu
+read -p "Seçeneklerden Birini Seçin [ 1 - 60 ] : " menu
 echo -e ""
 case $menu in
 1)

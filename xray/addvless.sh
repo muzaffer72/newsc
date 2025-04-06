@@ -1,7 +1,7 @@
 #!/bin/bash
-# My Telegram : https://t.me/anuybazoelk
+# My Telegram : https://t.me/onvaovpn
 # ==========================================
-# Color
+# Renk
 RED='\033[0;31m'
 NC='\033[0m'
 GREEN='\033[0;32m'
@@ -11,23 +11,23 @@ PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 # ==========================================
-# Getting
+# Alınıyor
 MYIP=$(wget -qO- icanhazip.com);
-IZIN=$( curl https://mrtunneldo2024.github.io/ip | grep $MYIP )
-echo "Memeriksa Hak Akses VPS..."
+
+echo "VPS Erişim Haklarını Kontrol ediliyor..."
 if [ $MYIP = $IZIN ]; then
 clear
-echo -e "${CYAN}Akses Diizinkan...${off}"
+echo -e "${CYAN}Erişim İzin Verildi...${off}"
 sleep 1
 else
 clear
-echo -e "${PURPLE}Akses Diblokir!${off}"
-echo "Hanya Untuk Pengguna Berbayar!"
-echo "Silahkan Hubungi Admin"
+echo -e "${PURPLE}Erişim Engellendi!${off}"
+echo "Sadece Ücretli Kullanıcılar İçin!"
+echo "Lütfen Yönetici ile İletişime Geçin"
 exit 0
 fi
 clear
-echo "Checking VPS"
+echo "VPS Kontrol Ediliyor"
 clear
 source /var/lib/bztunnelling/ipvps.conf
 if [[ "$IP" = "" ]]; then
@@ -38,17 +38,17 @@ fi
 tls="$(cat ~/log-install.txt | grep -w "Vless TLS" | cut -d: -f2|sed 's/ //g')"
 nontls="$(cat ~/log-install.txt | grep -w "Vless None TLS" | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
-		read -rp "Username : " -e user
+		read -rp "Kullanıcı Adı : " -e user
 		CLIENT_EXISTS=$(grep -w $user /etc/xray/config.json | wc -l)
 
 		if [[ ${CLIENT_EXISTS} == '1' ]]; then
 			echo ""
-			echo -e "Username ${RED}${user}${NC} Already On VPS Please Choose Another"
+			echo -e "Kullanıcı Adı ${RED}${user}${NC} Zaten VPS'de Mevcut, Lütfen Başka Bir Tane Seçin"
 			exit 1
 		fi
 	done
 uuid=$(cat /proc/sys/kernel/random/uuid)
-read -p "Expired (Days) : " masaaktif
+read -p "Süre (Gün) : " masaaktif
 hariini=`date -d "0 days" +"%Y-%m-%d"`
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#xray-vless-tls$/a\#### '"$user $exp"'\
@@ -63,21 +63,21 @@ clear
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "\E[44;1;39m          ⇱ XRAYS/VLESS ⇲          \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "❇️ Remarks     : ${user}"
-echo -e "❇️ IP/Host     : ${MYIP}"
-echo -e "❇️ Address     : ${domain}"
+echo -e "❇️ Not         : ${user}"
+echo -e "❇️ IP/Sunucu   : ${MYIP}"
+echo -e "❇️ Adres       : ${domain}"
 echo -e "❇️ Port TLS    : ${tls}"
 echo -e "❇️ Port No TLS : ${nontls}"
-echo -e "❇️ User ID     : ${uuid}"
+echo -e "❇️ Kullanıcı ID     : ${uuid}"
 echo -e "❇️ Alter ID    : 0"
-echo -e "❇️ Security    : auto"
-echo -e "❇️ Network     : ws"
-echo -e "❇️ Path        : /vless/"
-echo -e "❇️ Created     : $hariini"
-echo -e "❇️ Expired     : $exp"
+echo -e "❇️ Güvenlik    : auto"
+echo -e "❇️ Ağ        : ws"
+echo -e "❇️ Yol         : /vless/"
+echo -e "❇️ Oluşturulma : $hariini"
+echo -e "❇️ Bitiş       : $exp"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "\E[44;1;39m         Link TLS    : ${xrayvless1}          \E[0m"
+echo -e "\E[44;1;39m         TLS Bağlantısı    : ${xrayvless1}          \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "\E[44;1;39m         Link No TLS : ${xrayvless2}          \E[0m"
+echo -e "\E[44;1;39m         TLS Olmayan Bağlantı : ${xrayvless2}          \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"

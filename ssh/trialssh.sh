@@ -1,7 +1,7 @@
 #!/bin/bash
-# My Telegram : https://t.me/anuybazoelk
+# My Telegram : https://t.me/onvaovpn
 # ==========================================
-# Color
+# Renk
 RED='\033[0;31m'
 NC='\033[0m'
 GREEN='\033[0;32m'
@@ -11,23 +11,23 @@ PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 # ==========================================
-# Getting
+# Alınıyor
 MYIP=$(wget -qO- icanhazip.com);
-IZIN=$( curl https://mrtunneldo2024.github.io/ip | grep $MYIP )
-echo "Memeriksa Hak Akses VPS..."
+
+echo "VPS Erişim Haklarını Kontrol ediliyor..."
 if [ $MYIP = $IZIN ]; then
 clear
-echo -e "${CYAN}Akses Diizinkan...${off}"
+echo -e "${CYAN}Erişim İzin Verildi...${off}"
 sleep 1
 else
 clear
-echo -e "${PURPLE}Akses Diblokir!${off}"
-echo "Hanya Untuk Pengguna Berbayar!"
-echo "Silahkan Hubungi Admin"
+echo -e "${PURPLE}Erişim Engellendi!${off}"
+echo "Sadece Ücretli Kullanıcılar İçin!"
+echo "Lütfen Yönetici ile İletişime Geçin"
 exit 0
 fi
 clear
-echo "Checking VPS"
+echo "VPS Kontrol Ediliyor"
 clear
 source /var/lib/akbarstorevpn/ipvps.conf
 if [[ "$IP2" = "" ]]; then
@@ -41,7 +41,7 @@ ssl="$(cat ~/log-install.txt | grep -w "Stunnel5" | cut -d: -f2)"
 sqd="$(cat ~/log-install.txt | grep -w "Squid" | cut -d: -f2)"
 ovpn="$(netstat -nlpt | grep -i openvpn | grep -i 0.0.0.0 | awk '{print $4}' | cut -d: -f2)"
 ovpn2="$(netstat -nlpu | grep -i openvpn | grep -i 0.0.0.0 | awk '{print $4}' | cut -d: -f2)"
-Login=Trial`</dev/urandom tr -dc X-Z0-9 | head -c4`
+Login=Deneme`</dev/urandom tr -dc X-Z0-9 | head -c4`
 hari="1"
 Pass=1
 clear
@@ -51,18 +51,18 @@ systemctl restart ssh-ohp
 systemctl restart dropbear-ohp
 systemctl restart openvpn-ohp
 useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
-exp="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
+exp="$(chage -l $Login | grep "Hesap süresi dolar" | awk -F": " '{print $2}')"
 hariini=`date -d "0 days" +"%Y-%m-%d"`
 expi=`date -d "$masaaktif days" +"%Y-%m-%d"`
 echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
 echo -e ""
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "\E[44;1;39m          ⇱ Informasi SSH & OpenVPN ⇲          \E[0m"
+echo -e "\E[44;1;39m          ⇱ SSH & OpenVPN Bilgileri ⇲          \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "❇️ IP/Host       : $IP"
-echo -e "❇️ Domain        : ${domain}"
-echo -e "❇️ Username      : $Login"
-echo -e "❇️ Password      : $Pass"
+echo -e "❇️ IP/Sunucu       : $IP"
+echo -e "❇️ Alan Adı        : ${domain}"
+echo -e "❇️ Kullanıcı Adı      : $Login"
+echo -e "❇️ Şifre      : $Pass"
 echo -e "❇️ Dropbear      : 109, 143"
 echo -e "❇️ SSL/TLS       : $ssl"
 echo -e "❇️ Port Squid    : $sqd"
@@ -88,6 +88,6 @@ echo -e "\E[44;1;39m          ⇱ Payload Websocket No Tls ⇲          \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "GET / HTTP/1.1[crlf]Host: ${domain}[crlf]Content-Lenght: @anuybazoelk639[crlf]Upgrade: NyariGratisan[crlf][crlf]"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "\E[44;1;39m          ⇱ Created       : $hariini ⇲          \E[0m"
-echo -e "\E[44;1;39m          ⇱ Expired       : $expi ⇲          \E[0m"
+echo -e "\E[44;1;39m          ⇱ Oluşturulma    : $hariini ⇲          \E[0m"
+echo -e "\E[44;1;39m          ⇱ Bitiş          : $expi ⇲          \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"

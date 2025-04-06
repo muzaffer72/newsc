@@ -1,7 +1,7 @@
 #!/bin/bash
-# My Telegram : https://t.me/anuybazoelk
+# My Telegram : https://t.me/onvaovpn
 # ==========================================
-# Color
+# Renk
 RED='\033[0;31m'
 NC='\033[0m'
 GREEN='\033[0;32m'
@@ -11,33 +11,33 @@ PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 # ==========================================
-# Getting
+# Alınıyor
 MYIP=$(wget -qO- icanhazip.com);
-IZIN=$( curl https://mrtunneldo2024.github.io/ip | grep $MYIP )
-echo "Memeriksa Hak Akses VPS..."
+
+echo "VPS Erişim Haklarını Kontrol ediliyor..."
 if [ $MYIP = $IZIN ]; then
 clear
-echo -e "${CYAN}Akses Diizinkan...${off}"
+echo -e "${CYAN}Erişim İzin Verildi...${off}"
 sleep 1
 else
 clear
-echo -e "${PURPLE}Akses Diblokir!${off}"
-echo "Hanya Untuk Pengguna Berbayar!"
-echo "Silahkan Hubungi Admin"
+echo -e "${PURPLE}Erişim Engellendi!${off}"
+echo "Sadece Ücretli Kullanıcılar İçin!"
+echo "Lütfen Yönetici ile İletişime Geçin"
 exit 0
 fi
 clear
-echo "Checking VPS"
+echo "VPS Kontrol Ediliyor"
 clear
 echo -n > /tmp/other.txt
 data=( `cat /etc/xray/config.json | grep '^####' | cut -d ' ' -f 2`);
 echo "----------------------------------------";
-echo "---------=[ Vless User Login ]=---------";
+echo "---------=[ Vless Kullanıcı Girişi ]=---------";
 echo "----------------------------------------";
 for akun in "${data[@]}"
 do
 if [[ -z "$akun" ]]; then
-akun="tidakada"
+akun="mevcutdeğil"
 fi
 echo -n > /tmp/ipvless.txt
 data2=( `netstat -anp | grep ESTABLISHED | grep tcp6 | grep xray | awk '{print $5}' | cut -d: -f1 | sort | uniq`);
@@ -57,15 +57,15 @@ if [[ -z "$jum" ]]; then
 echo > /dev/null
 else
 jum2=$(cat /tmp/ipvless.txt | nl)
-echo "user : $akun";
+echo "kullanıcı : $akun";
 echo "$jum2";
 echo "----------------------------------------"
 fi
 rm -rf /tmp/ipvless.txt
 done
 oth=$(cat /tmp/other.txt | sort | uniq | nl)
-echo "other";
+echo "diğer";
 echo "$oth";
 echo "----------------------------------------"
-echo "Script By Nyari Gratisan"
+echo "Muzaffer Şanlı Tarafın geliştirildi"
 rm -rf /tmp/other.txt

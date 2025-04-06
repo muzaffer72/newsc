@@ -1,7 +1,7 @@
 #!/bin/bash
-# My Telegram : https://t.me/anuybazoelk
+# My Telegram : https://t.me/onvaovpn
 # ==========================================
-# Color
+# Renk
 RED='\033[0;31m'
 NC='\033[0m'
 GREEN='\033[0;32m'
@@ -11,23 +11,23 @@ PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 # ==========================================
-# Getting
+# Alınıyor
 MYIP=$(wget -qO- icanhazip.com);
-IZIN=$( curl https://mrtunneldo2024.github.io/ip | grep $MYIP )
-echo "Memeriksa Hak Akses VPS..."
+
+echo "VPS Erişim Haklarını Kontrol ediliyor..."
 if [ $MYIP = $IZIN ]; then
 clear
-echo -e "${CYAN}Akses Diizinkan...${off}"
+echo -e "${CYAN}Erişim İzin Verildi...${off}"
 sleep 1
 else
 clear
-echo -e "${PURPLE}Akses Diblokir!${off}"
-echo "Hanya Untuk Pengguna Berbayar!"
-echo "Silahkan Hubungi Admin"
+echo -e "${PURPLE}Erişim Engellendi!${off}"
+echo "Sadece Ücretli Kullanıcılar İçin!"
+echo "Lütfen Yönetici ile İletişime Geçin"
 exit 0
 fi
 clear
-echo "Checking VPS"
+echo "VPS Kontrol Ediliyor"
 clear
 data=( `cat /var/lib/akbarstorevpn/data-user-l2tp | grep '^###' | cut -d ' ' -f 2`);
 now=`date +"%Y-%m-%d"`
@@ -87,7 +87,7 @@ exp2=$(( (d1 - d2) / 86400 ))
 if [[ "$exp2" = "0" ]]; then
 sed -i "/^### $user $exp/d" "/usr/local/shadowsocksr/akun.conf"
 cd /usr/local/shadowsocksr
-match_del=$(python mujson_mgr.py -d -u "${user}"|grep -w "delete user")
+match_del=$(python mujson_mgr.py -d -u "${user}"|grep -w "kullanıcıyı sil")
 cd
 fi
 done

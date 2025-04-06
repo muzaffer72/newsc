@@ -1,6 +1,6 @@
 #!/bin/bash
 # ==========================================
-# Color
+# Renk
 RED='\033[0;31m'
 NC='\033[0m'
 GREEN='\033[0;32m'
@@ -10,21 +10,21 @@ PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 # ==========================================
-# Getting
+# Alınıyor
 clear
 IP=$(wget -qO- ipinfo.io/ip);
 date=$(date +"%Y-%m-%d")
 clear
 email=$(cat /home/email)
 if [[ "$email" = "" ]]; then
-echo "Masukkan Email Untuk Menerima Backup"
-read -rp "Email : " -e email
+echo "Yedekleme Almak İçin E-posta Adresinizi Girin"
+read -rp "E-posta : " -e email
 cat <<EOF>>/home/email
 $email
 EOF
 fi
 clear
-echo "Please Wait , Backup Process !!"
+echo "Lütfen Bekleyin, Yedekleme İşlemi Devam Ediyor!!"
 rm -rf /root/backup
 mkdir /root/backup
 cp -r /root/.acme.sh /root/backup/ &> /dev/null
@@ -44,27 +44,27 @@ url=$(rclone link dr:backup/$IP-$date.zip)
 id=(`echo $url | grep '^https' | cut -d'=' -f2`)
 link="https://drive.google.com/u/4/uc?id=${id}&export=download"
 echo -e "
-Detail Backup by BZ Official Store
+BZ Official Store Yedekleme Detayları
 ==================================
-IP VPS        : $IP
-Link Backup   : $link
-Tanggal       : $date
+VPS IP        : $IP
+Yedek Bağlantısı   : $link
+Tarih       : $date
 ==================================
-" | mail -s "Backup Data" $email
+" | mail -s "Veri Yedekleme" $email
 rm -rf /root/backup
 rm -r /root/$IP-$date.zip
 clear
 echo -e "
-Detail Backup by BZ Official Store
+BZ Official Store Yedekleme Detayları
 ==================================
-IP VPS        : $IP
-Link Backup   : $link
-Tanggal       : $date
+VPS IP        : $IP
+Yedek Bağlantısı   : $link
+Tarih       : $date
 ==================================
 "
-echo -e "Script By BZ TUNNELLING "
+echo -e "Hepsibiraradavpn by Onvoa.net "
 echo -e "Whatsapp      : wa.me/6287728411949 "
 echo -e "Telegram      : t.me/anuybazoelk "
 echo ""
-read -n 1 -s -r -p "   Press any key to back on menu"
+read -n 1 -s -r -p "   Menüye dönmek için herhangi bir tuşa basın"
 menu

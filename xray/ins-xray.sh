@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Color
+# Renk
 RED='\033[0;31m'
 NC='\033[0m'
 GREEN='\033[0;32m'
@@ -11,21 +11,21 @@ CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 
 MYIP=$(wget -qO- icanhazip.com);
-IZIN=$( curl https://mrtunneldo2024.github.io/ip | grep $MYIP )
-echo "Memeriksa Hak Akses VPS..."
+
+echo "VPS Erişim Haklarını Kontrol ediliyor..."
 if [ $MYIP = $IZIN ]; then
 clear
-echo -e "${CYAN}Akses Diizinkan...${off}"
+echo -e "${CYAN}Erişim İzin Verildi...${off}"
 sleep 1
 else
 clear
-echo -e "${PURPLE}Akses Diblokir!${off}"
-echo "Hanya Untuk Pengguna Berbayar!"
-echo "Silahkan Hubungi Admin"
+echo -e "${PURPLE}Erişim Engellendi!${off}"
+echo "Sadece Ücretli Kullanıcılar İçin!"
+echo "Lütfen Yönetici ile İletişime Geçin"
 exit 0
 fi
 clear
-echo "Checking VPS"
+echo "VPS Kontrol Ediliyor"
 clear
 domain=$(cat /etc/xray/domain)
 apt install iptables iptables-persistent -y
@@ -41,24 +41,24 @@ chronyc sourcestats -v
 chronyc tracking -v
 date
 
-# / / Ambil Xray Core Version Terbaru
+# / / En Son Xray Core Sürümünü Al
 latest_version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
 
-# / / Installation Xray Core
+# / / Xray Core Kurulumu
 xraycore_link="https://github.com/XTLS/Xray-core/releases/download/v$latest_version/xray-linux-64.zip"
 
-# / / Make Main Directory
+# / / Ana Dizin Oluştur
 mkdir -p /usr/bin/xray
 mkdir -p /etc/xray
 
-# / / Unzip Xray Linux 64
+# / / Xray Linux 64'ü Çıkart
 cd `mktemp -d`
 curl -sL "$xraycore_link" -o xray.zip
 unzip -q xray.zip && rm -rf xray.zip
 mv xray /usr/local/bin/xray
 chmod +x /usr/local/bin/xray
 
-# Make Folder XRay
+# XRay Klasörü Oluştur
 mkdir -p /var/log/xray/
 
 sudo lsof -t -i tcp:80 -s tcp:listen | sudo xargs kill
@@ -67,7 +67,7 @@ wget https://raw.githubusercontent.com/acmesh-official/acme.sh/master/acme.sh
 bash acme.sh --install
 rm acme.sh
 cd .acme.sh
-bash acme.sh --register-account -m senowahyu62@gmail.com
+bash acme.sh --register-account -m guzelim.batmanli@gmail.com
 bash acme.sh --issue --standalone -d $domain --force
 bash acme.sh --installcert -d $domain --fullchainpath /etc/xray/xray.crt --keypath /etc/xray/xray.key
 
@@ -79,11 +79,11 @@ uuid4=$(cat /proc/sys/kernel/random/uuid)
 uuid5=$(cat /proc/sys/kernel/random/uuid)
 uuid6=$(cat /proc/sys/kernel/random/uuid)
 
-# // Certificate File
+# // Sertifika Dosyası
 path_crt="/etc/xray/xray.crt"
 path_key="/etc/xray/xray.key"
 
-# Buat Config Xray
+# Xray Yapılandırması Oluştur
 cat > /etc/xray/config.json << END
 {
   "log": {
@@ -355,8 +355,8 @@ END
 # / / Installation Xray Service
 cat > /etc/systemd/system/xray.service << END
 [Unit]
-Description=Xray Service By Nyari Gratisan
-Documentation=https://t.me/anuybazoelk
+Description=Xray Service By Muzaffer Şanlı
+Documentation=https://t.me/onvaovpn
 After=network.target nss-lookup.target
 
 [Service]
@@ -473,8 +473,8 @@ END
 # Installing Trojan Go Service
 cat > /etc/systemd/system/trojan-go.service << END
 [Unit]
-Description=Trojan-Go Service By Nyari Gratisan
-Documentation=https://t.me/anuybazoelk
+Description=Trojan-Go Service By Muzaffer Şanlı
+Documentation=https://t.me/onvaovpn
 After=network.target nss-lookup.target
 
 [Service]

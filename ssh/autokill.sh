@@ -1,7 +1,7 @@
 #!/bin/bash
-# My Telegram : https://t.me/anuybazoelk
+# My Telegram : https://t.me/onvaovpn
 # ==========================================
-# Color
+# Renk
 RED='\033[0;31m'
 NC='\033[0m'
 GREEN='\033[0;32m'
@@ -11,27 +11,27 @@ PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 # ==========================================
-# Getting
+# Alınıyor
 MYIP=$(wget -qO- icanhazip.com);
-IZIN=$( curl https://mrtunneldo2024.github.io/ip | grep $MYIP )
-echo "Memeriksa Hak Akses VPS..."
+
+echo "VPS Erişim Haklarını Kontrol ediliyor..."
 if [ $MYIP = $IZIN ]; then
 clear
-echo -e "${CYAN}Akses Diizinkan...${off}"
+echo -e "${CYAN}Erişim İzin Verildi...${off}"
 sleep 1
 else
 clear
-echo -e "${PURPLE}Akses Diblokir!${off}"
-echo "Hanya Untuk Pengguna Berbayar!"
-echo "Silahkan Hubungi Admin"
+echo -e "${PURPLE}Erişim Engellendi!${off}"
+echo "Sadece Ücretli Kullanıcılar İçin!"
+echo "Lütfen Yönetici ile İletişime Geçin"
 exit 0
 fi
 clear
-echo "Checking VPS"
+echo "VPS Kontrol Ediliyor"
 clear
 Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
-Info="${Green_font_prefix}[ON]${Font_color_suffix}"
-Error="${Red_font_prefix}[OFF]${Font_color_suffix}"
+Info="${Green_font_prefix}[AÇIK]${Font_color_suffix}"
+Error="${Red_font_prefix}[KAPALI]${Font_color_suffix}"
 cek=$(grep -c -E "^# Autokill" /etc/cron.d/tendang)
 if [[ "$cek" = "1" ]]; then
 sts="${Info}"
@@ -41,17 +41,17 @@ fi
 clear
 echo -e ""
 echo -e "=================================="
-echo -e "       Status Autokill $sts       "
+echo -e "       Autokill Durumu $sts       "
 echo -e "=================================="
-echo -e "1. AutoKill After 5 Minutes"
-echo -e "2. AutoKill After 10 Minutes"
-echo -e "3. AutoKill After 15 Minutes"
-echo -e "4. Turn Off AutoKill/MultiLogin"
-echo -e "5. Exit"
+echo -e "1. 5 Dakika Sonra Otomatik Kapat"
+echo -e "2. 10 Dakika Sonra Otomatik Kapat"
+echo -e "3. 15 Dakika Sonra Otomatik Kapat"
+echo -e "4. Otomatik Kapat/Çoklu Girişi Kapat"
+echo -e "5. Çıkış"
 echo -e "=================================="                                                                                                          
 echo -e ""
-read -p "Select From Options [1-4 or x] :  " AutoKill
-read -p "Multilogin Maximum Number Of Allowed: " max
+read -p "Seçeneklerden Birini Seçin [1-4 veya x] :  " AutoKill
+read -p "İzin Verilen Maksimum Çoklu Oturum Sayısı: " max
 echo -e ""
 case $AutoKill in
                 1)
@@ -64,8 +64,8 @@ case $AutoKill in
                 echo -e ""
                 echo -e "======================================"
                 echo -e ""
-                echo -e "      Allowed MultiLogin : $max"
-                echo -e "      AutoKill Every     : 5 Minutes"      
+                echo -e "      İzin Verilen Çoklu Oturum : $max"
+                echo -e "      Otomatik Kapatma Sıklığı : 5 Dakika"      
                 echo -e ""
                 echo -e "======================================"                                                                                                                                 
                 exit                                                                  
@@ -80,8 +80,8 @@ case $AutoKill in
                 echo -e ""
                 echo -e "======================================"
                 echo -e ""
-                echo -e "      Allowed MultiLogin : $max"
-                echo -e "      AutoKill Every     : 10 Minutes"
+                echo -e "      İzin Verilen Çoklu Oturum : $max"
+                echo -e "      Otomatik Kapatma Sıklığı : 10 Dakika"
                 echo -e ""
                 echo -e "======================================"
                 exit
@@ -96,8 +96,8 @@ case $AutoKill in
                 echo -e ""
                 echo -e "======================================"
                 echo -e ""
-                echo -e "      Allowed MultiLogin : $max"
-                echo -e "      AutoKill Every     : 15 Minutes"
+                echo -e "      İzin Verilen Çoklu Oturum : $max"
+                echo -e "      Otomatik Kapatma Sıklığı : 15 Dakika"
                 echo -e ""
                 echo -e "======================================"
                 exit
@@ -108,7 +108,7 @@ case $AutoKill in
                 echo -e ""
                 echo -e "======================================"
                 echo -e ""
-                echo -e "      AutoKill MultiLogin Turned Off  "
+                echo -e "      Otomatik Çoklu Oturum Kapatma Kapatıldı  "
                 echo -e ""
                 echo -e "======================================"
                 exit

@@ -1,7 +1,7 @@
 #!/bin/bash
-# My Telegram : https://t.me/anuybazoelk
+# My Telegram : https://t.me/onvaovpn
 # ==========================================
-# Color
+# Renk
 RED='\033[0;31m'
 NC='\033[0m'
 GREEN='\033[0;32m'
@@ -11,53 +11,48 @@ PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 # ==========================================
-# Getting
-export CHATID="1328284490"
-export KEY="8068817658:AAFg9G7lJq7UMoF94EN8ihraoT5DQaJgbfw"
+# Alınıyor
+export CHATID="989061293"
+export KEY="7721006940:AAHD_7QqIdBOGyOB2JVBS0bEsAOTmoYiqLs"
 export TIME="10"
 export URL="https://api.telegram.org/bot$KEY/sendMessage"
 clear
 MYIP=$(wget -qO- icanhazip.com);
-IZIN=$( curl https://anuy639.github.io/izin | grep $MYIP )
-echo "Memeriksa Hak Akses VPS..."
+
+echo "VPS Erişim Haklarını Kontrol ediliyor..."
 if [ $MYIP = $IZIN ]; then
-echo -e "${NC}${GREEN}Permission Accepted...${NC}"
+echo -e "${NC}${GREEN}İzin Kabul Edildi...${NC}"
 else
-echo -e "${NC}${RED}Permission Denied!${NC}";
-echo -e "${NC}${LIGHT}Please Contact Admin!!"
-echo -e "${NC}${LIGHT}Facebook	: https://m.facebook.com/Anuybazoelk639"
-echo -e "${NC}${LIGHT}WhatsApp	: https://wa.me/6285349326511"
-echo -e "${NC}${LIGHT}WhatsApp	: https://wa.me/6287728411949"
-echo -e "${NC}${LIGHT}Youtube	: youtube.com/@anuy63"
-echo -e "${NC}${LIGHT}Telegram	: https://t.me/anuybazoelk"
-echo -e "${NC}${LIGHT}Telegram	: https;//t.me/anuybazoelk639"
+echo -e "${NC}${RED}İzin Reddedildi!${NC}";
+echo -e "${NC}${LIGHT}Lütfen Yönetici ile İletişime Geçin!!${NC}"
+echo -e "${NC}${LIGHT}Telegram	: https://t.me/onvaovpn"
 exit 0
 fi
 clear
-echo "Checking VPS"
+echo "VPS Kontrol Ediliyor"
 clear
 NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/trojan-go/akun.conf")
 	if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
 		clear
 		echo ""
-		echo "You have no existing clients!"
+		echo "Mevcut istemciniz yok!"
 		exit 1
 	fi
 
 	clear
 	echo ""
-	echo "Select the existing client you want to renew"
-	echo " Press CTRL+C to return"
+	echo "Yenilemek istediğiniz mevcut istemciyi seçin"
+	echo " Geri dönmek için CTRL+C tuşlarına basın"
 	echo -e "==============================="
 	grep -E "^### " "/etc/trojan-go/akun.conf" | cut -d ' ' -f 2-3 | nl -s ') '
 	until [[ ${CLIENT_NUMBER} -ge 1 && ${CLIENT_NUMBER} -le ${NUMBER_OF_CLIENTS} ]]; do
 		if [[ ${CLIENT_NUMBER} == '1' ]]; then
-			read -rp "Select one client [1]: " CLIENT_NUMBER
+			read -rp "Bir istemci seçin [1]: " CLIENT_NUMBER
 		else
-			read -rp "Select one client [1-${NUMBER_OF_CLIENTS}]: " CLIENT_NUMBER
+			read -rp "Bir istemci seçin [1-${NUMBER_OF_CLIENTS}]: " CLIENT_NUMBER
 		fi
 	done
-read -p "Expired (Days) : " masaaktif
+read -p "Süre (Gün) : " masaaktif
 user=$(grep -E "^### " "/etc/trojan-go/akun.conf" | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p)
 exp=$(grep -E "^### " "/etc/trojan-go/akun.conf" | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p)
 now=$(date +%Y-%m-%d)
@@ -71,9 +66,9 @@ clear
 curl -s --max-time $TIME -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 echo ""
 echo "============================"
-echo "  TrojanGo Account Renewed  "
+echo "  TrojanGo Hesabı Yenilendi  "
 echo "============================"
-echo "Username : $user"
-echo "Expired  : $exp4"
+echo "Kullanıcı Adı : $user"
+echo "Süresi Doldu  : $exp4"
 echo "=========================="
-echo "Script By BZ TUNNELLING"
+echo "Hepsibiraradavpn by Onvoa.net"

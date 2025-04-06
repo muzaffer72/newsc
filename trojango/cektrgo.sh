@@ -1,7 +1,7 @@
 #!/bin/bash
-# My Telegram : https://t.me/anuybazoelk
+# My Telegram : https://t.me/onvaovpn
 # ==========================================
-# Color
+# Renk
 RED='\033[0;31m'
 NC='\033[0m'
 GREEN='\033[0;32m'
@@ -11,40 +11,35 @@ PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 # ==========================================
-# Getting
-export CHATID="1328284490"
-export KEY="8068817658:AAFg9G7lJq7UMoF94EN8ihraoT5DQaJgbfw"
+# Alınıyor
+export CHATID="989061293"
+export KEY="7721006940:AAHD_7QqIdBOGyOB2JVBS0bEsAOTmoYiqLs"
 export TIME="10"
 export URL="https://api.telegram.org/bot$KEY/sendMessage"
 clear
 MYIP=$(wget -qO- icanhazip.com);
-IZIN=$( curl https://anuy639.github.io/izin | grep $MYIP )
-echo "Memeriksa Hak Akses VPS..."
+
+echo "VPS Erişim Haklarını Kontrol ediliyor..."
 if [ $MYIP = $IZIN ]; then
-echo -e "${NC}${GREEN}Permission Accepted...${NC}"
+echo -e "${NC}${GREEN}İzin Kabul Edildi...${NC}"
 else
-echo -e "${NC}${RED}Permission Denied!${NC}";
-echo -e "${NC}${LIGHT}Please Contact Admin!!"
-echo -e "${NC}${LIGHT}Facebook	: https://m.facebook.com/Anuybazoelk639"
-echo -e "${NC}${LIGHT}WhatsApp	: https://wa.me/6285349326511"
-echo -e "${NC}${LIGHT}WhatsApp	: https://wa.me/6287728411949"
-echo -e "${NC}${LIGHT}Youtube	: youtube.com/@anuy63"
-echo -e "${NC}${LIGHT}Telegram	: https://t.me/anuybazoelk"
-echo -e "${NC}${LIGHT}Telegram	: https;//t.me/anuybazoelk639"
+echo -e "${NC}${RED}İzin Reddedildi!${NC}";
+echo -e "${NC}${LIGHT}Lütfen Yönetici ile İletişime Geçin!!${NC}"
+echo -e "${NC}${LIGHT}Telegram	: https://t.me/onvaovpn"
 exit 0
 fi
 clear
-echo "Checking VPS"
+echo "VPS Kontrol Ediliyor"
 clear
 echo -n > /tmp/other.txt
 data=( `cat /etc/trojan-go/akun.conf | grep '^###' | cut -d ' ' -f 2`);
 echo "------------------------------------";
-echo "-----=[ Trojan-Go User Login ]=-----";
+echo "-----=[ Trojan-Go Kullanıcı Girişi ]=-----";
 echo "------------------------------------";
 for akun in "${data[@]}"
 do
 if [[ -z "$akun" ]]; then
-akun="tidakada"
+akun="mevcutdeğil"
 fi
 echo -n > /tmp/iptrojango.txt
 data2=( `netstat -anp | grep ESTABLISHED | grep tcp6 | grep trojan-go | awk '{print $5}' | cut -d: -f1 | sort | uniq`);
@@ -64,16 +59,16 @@ if [[ -z "$jum" ]]; then
 echo > /dev/null
 else
 jum2=$(cat /tmp/iptrojango.txt | nl)
-echo "user : $akun";
+echo "kullanıcı : $akun";
 echo "$jum2";
 echo "------------------------------------";
 fi
 rm -rf /tmp/iptrojango.txt
 done
 oth=$(cat /tmp/other.txt | sort | uniq | nl)
-echo "other";
+echo "diğer";
 echo "$oth";
 echo "------------------------------------";
-echo "Script By BZ TUNNELLING"
+echo "Hepsibiraradavpn by Onvoa.net"
 rm -rf /tmp/other.txt
 

@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script by : Nyari Gratisan
+# Script by : Muzaffer Şanlı
 #!/bin/bash
 clear
 MAX=1

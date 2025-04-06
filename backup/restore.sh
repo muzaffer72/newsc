@@ -1,6 +1,6 @@
 #!/bin/bash
 # ==========================================
-# Color
+# Renk
 RED='\033[0;31m'
 NC='\033[0;37m'
 GREEN='\033[0;32m'
@@ -10,43 +10,43 @@ PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 # ==========================================
-# Getting
+# Alınıyor
 clear
-echo "Fitur Ini Hanya Bisa Digunakan Sesuai Data Vps Dengan Autoscript Ini"
-echo "Silakan masukkan tautan ke file cadangan data vps Anda "
-echo "Anda dapat memeriksanya di email Anda jika Anda menjalankan backup data vps sebelumnya "
+echo "Bu Özellik Yalnızca Bu Otomatik Betik ile VPS Verileriyle Kullanılabilir"
+echo "Lütfen VPS veri yedekleme dosyanızın bağlantısını girin"
+echo "Daha önce VPS veri yedeklemesi yaptıysanız e-postanızı kontrol edebilirsiniz"
 echo " "
-read -rp "Link File: " -e url
+read -rp "Dosya Bağlantısı: " -e url
 wget -O backup.zip "$url"
 unzip backup.zip
 rm -f backup.zip
 sleep 1
-echo Start Restore
+echo Geri Yüklemeyi Başlat
 rm -f /root/backup/backup.zip &> /dev/null
 sleep 1
 cd /root/backup
-echo -e "$COLOR1│${NC}  [ ${green}INFO${NC} ] • Restoring passwd data..."
+echo -e "$COLOR1│${NC}  [ ${green}BİLGİ${NC} ] • Parola verileri geri yükleniyor..."
 sleep 1
 cp /root/backup/passwd /etc/ &> /dev/null
-echo -e "$COLOR1│${NC}  [ ${green}INFO${NC} ] • Restoring group data..."
+echo -e "$COLOR1│${NC}  [ ${green}BİLGİ${NC} ] • Grup verileri geri yükleniyor..."
 sleep 1
 cp /root/backup/group /etc/ &> /dev/null
-echo -e "$COLOR1│${NC}  [ ${green}INFO${NC} ] • Restoring shadow data..."
+echo -e "$COLOR1│${NC}  [ ${green}BİLGİ${NC} ] • Gölge verileri geri yükleniyor..."
 sleep 1
 cp /root/backup/shadow /etc/ &> /dev/null
-echo -e "$COLOR1│${NC}  [ ${green}INFO${NC} ] • Restoring gshadow data..."
+echo -e "$COLOR1│${NC}  [ ${green}BİLGİ${NC} ] • gshadow verileri geri yükleniyor..."
 sleep 1
 cp /root/backup/gshadow /etc/ &> /dev/null
-echo -e "$COLOR1│${NC}  [ ${green}INFO${NC} ] • Restoring chap-secrets data..."
+echo -e "$COLOR1│${NC}  [ ${green}BİLGİ${NC} ] • chap-secrets verileri geri yükleniyor..."
 sleep 1
 cp /root/backup/chap-secrets /etc/ppp/ &> /dev/null
-echo -e "$COLOR1│${NC}  [ ${green}INFO${NC} ] • Restoring passwd1 data..."
+echo -e "$COLOR1│${NC}  [ ${green}BİLGİ${NC} ] • passwd1 verileri geri yükleniyor..."
 sleep 1
 cp /root/backup/passwd1 /etc/ipsec.d/passwd &> /dev/null
-echo -e "$COLOR1│${NC}  [ ${green}INFO${NC} ] • Restoring ss.conf data..."
+echo -e "$COLOR1│${NC}  [ ${green}BİLGİ${NC} ] • ss.conf verileri geri yükleniyor..."
 sleep 1
 cp /root/backup/ss.conf /etc/shadowsocks-libev/ss.conf &> /dev/null
-echo -e "$COLOR1│${NC}  [ ${green}INFO${NC} ] • Restoring admin data..."
+echo -e "$COLOR1│${NC}  [ ${green}BİLGİ${NC} ] • Yönetici verileri geri yükleniyor..."
 sleep 1
 cp -r /root/backup/bztunnelling /var/lib/ &> /dev/null
 cp -r /root/backup/.acme.sh /root/ &> /dev/null
@@ -57,9 +57,9 @@ cp -r /root/backup/crontab /etc/ &> /dev/null
 cp -r /root/backup/cron.d /etc/ &> /dev/null
 rm -rf /root/backup &> /dev/null
 rm -rf /root/backup
-echo -e "$COLOR1│${NC}  [ ${GREEN}INFO${NC} ] • Done... Successfully"
+echo -e "$COLOR1│${NC}  [ ${GREEN}BİLGİ${NC} ] • Tamamlandı... Başarıyla"
 rm -f backup.zip
-echo Done
+echo Tamamlandı
 echo ""
-read -n 1 -s -r -p "   Press any key to back on menu"
+read -n 1 -s -r -p "   Menüye geri dönmek için herhangi bir tuşa basın"
 menu

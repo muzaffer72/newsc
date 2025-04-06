@@ -1,7 +1,7 @@
 #!/bin/bash
-# My Telegram : https://t.me/anuybazoelk
+# My Telegram : https://t.me/onvaovpn
 # ==========================================
-# Color
+# Renk
 RED='\033[0;31m'
 NC='\033[0m'
 GREEN='\033[0;32m'
@@ -11,30 +11,25 @@ PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 # ==========================================
-# Getting
-export CHATID="1328284490"
-export KEY="8068817658:AAFg9G7lJq7UMoF94EN8ihraoT5DQaJgbfw"
+# Alınıyor
+export CHATID="989061293"
+export KEY="7721006940:AAHD_7QqIdBOGyOB2JVBS0bEsAOTmoYiqLs"
 export TIME="10"
 export URL="https://api.telegram.org/bot$KEY/sendMessage"
 clear
 MYIP=$(wget -qO- icanhazip.com);
-IZIN=$( curl https://mrtunneldo2024.github.io/ip | grep $MYIP )
-echo "Memeriksa Hak Akses VPS..."
+
+echo "VPS Erişim Haklarını Kontrol ediliyor..."
 if [ $MYIP = $IZIN ]; then
-echo -e "${NC}${GREEN}Permission Accepted...${NC}"
+echo -e "${NC}${GREEN}İzin Kabul Edildi...${NC}"
 else
-echo -e "${NC}${RED}Permission Denied!${NC}";
-echo -e "${NC}${LIGHT}Please Contact Admin!!"
-echo -e "${NC}${LIGHT}Facebook	: https://m.facebook.com/Anuybazoelk639"
-echo -e "${NC}${LIGHT}WhatsApp	: https://wa.me/6285349326511"
-echo -e "${NC}${LIGHT}WhatsApp	: https://wa.me/6287728411949"
-echo -e "${NC}${LIGHT}Youtube	: youtube.com/@anuy63"
-echo -e "${NC}${LIGHT}Telegram	: https://t.me/anuybazoelk"
-echo -e "${NC}${LIGHT}Telegram	: https;//t.me/anuybazoelk639"
+echo -e "${NC}${RED}İzin Reddedildi!${NC}";
+echo -e "${NC}${LIGHT}Lütfen Yönetici ile İletişime Geçin!!${NC}"
+echo -e "${NC}${LIGHT}Telegram	: https://t.me/onvaovpn"
 exit 0
 fi
 clear
-echo "Checking VPS"
+echo "VPS Kontrol Ediliyor"
 clear
 uuid=$(cat /etc/trojan-go/uuid.txt)
 source /var/lib/bztunnelling/ipvps.conf
@@ -45,16 +40,16 @@ domain=$IP
 fi
 trgo="$(cat ~/log-install.txt | grep -w "Tr Go" | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${user_EXISTS} == '0' ]]; do
-		read -rp "Password : " -e user
+		read -rp "Şifre : " -e user
 		user_EXISTS=$(grep -w $user /etc/trojan-go/akun.conf | wc -l)
 
 		if [[ ${user_EXISTS} == '1' ]]; then
 			echo ""
-			echo -e "Username ${RED}${user}${NC} Already On VPS Please Choose Another"
+			echo -e "Kullanıcı Adı ${RED}${user}${NC} Zaten VPS'de Mevcut, Lütfen Başka Bir Tane Seçin"
 			exit 1
 		fi
 	done
-read -p "Expired (Days) : " masaaktif
+read -p "Süre (Gün) : " masaaktif
 sed -i '/"'""$uuid""'"$/a\,"'""$user""'"' /etc/trojan-go/config.json
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 hariini=`date -d "0 days" +"%Y-%m-%d"`
@@ -80,22 +75,22 @@ URL="$URL"
 TEXT="<code>====================</code>
 <code>		TROGO</code>
 <code>====================</code>
-<code>Remarks	: ${user}
-Address    : ${domain}
-Port       : ${trgo}
-Key        : ${user}
-alterId   : 0
-Security  : auto
-network   : ws
-Path      : /trojango
-Name      : TROJAN-GO</code>
+<code>Not	: ${user}
+Adres    : ${domain}
+Port     : ${trgo}
+Anahtar  : ${user}
+alterId  : 0
+Güvenlik : auto
+Ağ       : ws
+Yol      : /trojango
+İsim     : TROJAN-GO</code>
 <code>====================</code>
 <code> TROJAN-GO</code>
 <code>====================</code>
 <code>${link}</code>
 <code>====================</code>
-Dibuat Pada    : $hariini
-Berakhir Pada  : $exp
+Oluşturulma Tarihi    : $hariini
+Bitiş Tarihi  : $exp
 whatsapp	: wa.me/6287728411949
 Telegram	: t.me/anuybazoelk
 <code>====================</code>
@@ -104,19 +99,19 @@ curl -s --max-time $TIME -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TE
 echo ""
 clear
 echo -e "=======-TROJAN-GO-======="
-echo -e "Remarks	: ${user} "
-echo -e "Address	: ${domain} "
-echo -e "Port		: ${trgo} "
-echo -e "Key		: ${user} "
-echo -e "Encryption	: none "
-echo -e "Path		: /trojango "
-echo -e "Created	: $hariini "
-echo -e "Expired	: $exp "
+echo -e "Not	: ${user} "
+echo -e "Adres	: ${domain} "
+echo -e "Port	: ${trgo} "
+echo -e "Anahtar	: ${user} "
+echo -e "Şifreleme	: none "
+echo -e "Yol	: /trojango "
+echo -e "Oluşturulma	: $hariini "
+echo -e "Bitiş	: $exp "
 echo -e "========================="
-echo -e "Link TrGo	: ${link} "
+echo -e "TrGo Bağlantısı	: ${link} "
 echo -e "========================="
 echo -e "whatsapp	: wa.me/6287728411949 "
 echo -e "Telegram	: t.me/anuybazoelk "
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e ""
-echo -e "Script By BZ TUNNELLING"
+echo -e "Hepsibiraradavpn by Onvoa.net"

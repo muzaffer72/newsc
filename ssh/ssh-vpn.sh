@@ -1,6 +1,6 @@
 #!/bin/bash
 # ==========================================
-# Color
+# Renk
 RED='\033[0;31m'
 NC='\033[0m'
 GREEN='\033[0;32m'
@@ -10,38 +10,38 @@ PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 # ==========================================
-# Getting
+# Alınıyor
 MYIP=$(wget -qO- icanhazip.com);
-IZIN=$( curl https://mrtunneldo2024.github.io/ip | grep $MYIP )
-echo "Memeriksa Hak Akses VPS..."
+
+echo "VPS Erişim Haklarını Kontrol ediliyor..."
 if [ $MYIP = $IZIN ]; then
 clear
-echo -e "${CYAN}Akses Diizinkan...${off}"
+echo -e "${CYAN}Erişim İzin Verildi...${off}"
 sleep 1
 else
 clear
-echo -e "${PURPLE}Akses Diblokir!${off}"
-echo "Hanya Untuk Pengguna Berbayar!"
-echo "Silahkan Hubungi Admin"
+echo -e "${PURPLE}Erişim Engellendi!${off}"
+echo "Sadece Ücretli Kullanıcılar İçin!"
+echo "Lütfen Yönetici ile İletişime Geçin"
 exit 0
 fi
 clear
-echo "Checking VPS"
+echo "VPS Kontrol Ediliyor"
 clear
 # ==================================================
-# Link Hosting Kalian
-akbarvpn="raw.githubusercontent.com/mrtunneldo2024/newsc/refs/heads/main/ssh"
+# Host Linkiniz
+akbarvpn="raw.githubusercontent.com/muzaffer72/newsc/refs/heads/main/ssh"
 
-# Link Hosting Kalian Untuk Xray
-akbarvpnn="raw.githubusercontent.com/mrtunneldo2024/newsc/refs/heads/main/xray"
+# Xray İçin Host Linkiniz
+akbarvpnn="raw.githubusercontent.com/muzaffer72/newsc/refs/heads/main/xray"
 
-# Link Hosting Kalian Untuk Trojan Go
-akbarvpnnn="raw.githubusercontent.com/mrtunneldo2024/newsc/refs/heads/main/trojango"
+# Trojan Go İçin Host Linkiniz
+akbarvpnnn="raw.githubusercontent.com/muzaffer72/newsc/refs/heads/main/trojango"
 
-# Link Hosting Kalian Untuk Stunnel5
-akbarvpnnnn="raw.githubusercontent.com/mrtunneldo2024/newsc/refs/heads/main/stunnel5"
+# Stunnel5 İçin Host Linkiniz
+akbarvpnnnn="raw.githubusercontent.com/muzaffer72/newsc/refs/heads/main/stunnel5"
 
-# initializing var
+# değişkenleri başlatma
 export DEBIAN_FRONTEND=noninteractive
 MYIP=$(wget -qO- ipinfo.io/ip);
 MYIP2="s/xxxxxxxxx/$MYIP/g";
@@ -49,23 +49,23 @@ NET=$(ip -o $ANU -4 route show to default | awk '{print $5}');
 source /etc/os-release
 ver=$VERSION_ID
 
-#detail nama perusahaan
-country=ID
-state=KalimantanSelatan
-locality=Indonesia
-organization=nyarigratisan
-organizationalunit=nyarigratisan
-commonname=anuybazoelk639
-email=anuybazoelk639@gmail.com
+#şirket adı ayrıntıları
+country=TR
+state=Adana
+locality=Türkiye
+organization=onvao.net
+organizationalunit=onvao.net
+commonname=onvao.net
+email=guzelim.batmanli@gmail.com
 
-# simple password minimal
+# basit şifre minimum
 wget -O /etc/pam.d/common-password "https://${akbarvpn}/password"
 chmod +x /etc/pam.d/common-password
 
-# go to root
+# kök dizine git
 cd
 
-# Edit file /etc/systemd/system/rc-local.service
+# /etc/systemd/system/rc-local.service dosyasını düzenle
 cat > /etc/systemd/system/rc-local.service <<-END
 [Unit]
 Description=/etc/rc.local
@@ -85,32 +85,32 @@ END
 cat > /etc/rc.local <<-END
 #!/bin/sh -e
 # rc.local
-# By default this script does nothing.
+# Varsayılan olarak bu betik hiçbir şey yapmaz.
 exit 0
 END
 
-# Ubah izin akses
+# Erişim izinlerini değiştir
 chmod +x /etc/rc.local
 
-# enable rc local
+# rc local'ı etkinleştir
 systemctl enable rc-local
 systemctl start rc-local.service
 
-# disable ipv6
+# ipv6'yı devre dışı bırak
 echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
 sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
 
-#update
+#güncelle
 apt update -y
 apt upgrade -y
 apt dist-upgrade -y
 apt-get remove --purge ufw firewalld -y
 apt-get remove --purge exim4 -y
 
-# install wget and curl
+# wget ve curl yükle
 apt -y install wget curl
 
-# Install Requirements Tools
+# Gerekli Araçları Yükle
 apt install ruby -y
 apt install python -y
 apt install make -y
@@ -143,18 +143,18 @@ apt install libssl-dev -y
 apt install libssl1.0-dev -y
 apt install dos2unix -y
 
-# set time GMT +7
+# zamanı GMT +7 olarak ayarla
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
-# set locale
+# yerel ayarları ayarla
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 
-# install
+# yükle
 apt-get --reinstall --fix-missing install -y bzip2 gzip coreutils wget screen rsyslog iftop htop net-tools zip unzip wget net-tools curl nano sed screen gnupg gnupg1 bc apt-transport-https build-essential dirmngr libxml-parser-perl neofetch git lsof
 echo "clear" >> .profile
 echo "neofetch" >> .profile
 
-# install webserver
+# web sunucusunu yükle
 apt -y install nginx php php-fpm php-cli php-mysql libxml-parser-perl
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
@@ -171,7 +171,7 @@ wget -O /home/vps/public_html/index.html "https://${akbarvpn}/index.html1"
 /etc/init.d/nginx restart
 cd
 
-# install badvpn
+# badvpn yükle
 cd
 wget -O /usr/bin/badvpn-udpgw "https://${akbarvpn}/badvpn-udpgw64"
 chmod +x /usr/bin/badvpn-udpgw
@@ -188,10 +188,10 @@ screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7700 --max-clients 500
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7800 --max-clients 500
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7900 --max-clients 500
 
-# setting port ssh
+# ssh portunu ayarla
 sed -i 's/Port 22/Port 22/g' /etc/ssh/sshd_config
 
-# install dropbear
+# dropbear yükle
 apt -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=143/g' /etc/default/dropbear
@@ -200,47 +200,46 @@ echo "/bin/false" >> /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
 /etc/init.d/dropbear restart
 
-# install squid
+# squid yükle
 cd
 apt -y install squid3
 wget -O /etc/squid/squid.conf "https://${akbarvpn}/squid3.conf"
 sed -i $MYIP2 /etc/squid/squid.conf
 
-# Install SSLH
+# SSLH Yükle
 apt -y install sslh
 rm -f /etc/default/sslh
 
-# Settings SSLH
+# SSLH Ayarları
 cat > /etc/default/sslh <<-END
-# Default options for sslh initscript
-# sourced by /etc/init.d/sslh
+# sslh initscript için varsayılan seçenekler
+# /etc/init.d/sslh tarafından kaynak alınmıştır
 
-# Disabled by default, to force yourself
-# to read the configuration:
-# - /usr/share/doc/sslh/README.Debian (quick start)
-# - /usr/share/doc/sslh/README, at "Configuration" section
-# - sslh(8) via "man sslh" for more configuration details.
-# Once configuration ready, you *must* set RUN to yes here
-# and try to start sslh (standalone mode only)
+# Yapılandırmayı okumaya zorlamak için varsayılan olarak devre dışı bırakılmıştır:
+# - /usr/share/doc/sslh/README.Debian (hızlı başlangıç)
+# - /usr/share/doc/sslh/README, "Yapılandırma" bölümünde
+# - Daha fazla yapılandırma ayrıntısı için "man sslh" aracılığıyla sslh(8).
+# Yapılandırma hazır olduğunda, burada RUN'ı evet olarak ayarlamanız
+# ve sslh'yi başlatmayı denemeniz gerekir (yalnızca bağımsız mod)
 
 RUN=yes
 
-# binary to use: forked (sslh) or single-thread (sslh-select) version
-# systemd users: don't forget to modify /lib/systemd/system/sslh.service
+# kullanılacak ikili dosya: çatallanmış (sslh) veya tek iş parçacıklı (sslh-select) sürüm
+# systemd kullanıcıları: /lib/systemd/system/sslh.service dosyasını değiştirmeyi unutmayın
 DAEMON=/usr/sbin/sslh
 
 DAEMON_OPTS="--user sslh --listen 0.0.0.0:443 --ssl 127.0.0.1:777 --ssh 127.0.0.1:109 --openvpn 127.0.0.1:1194 --http 127.0.0.1:8880 --pidfile /var/run/sslh/sslh.pid -n"
 
 END
 
-# Restart Service SSLH
+# SSLH Servisini Yeniden Başlat
 service sslh restart
 systemctl restart sslh
 /etc/init.d/sslh restart
 /etc/init.d/sslh status
 /etc/init.d/sslh restart
 
-# setting vnstat
+# vnstat ayarları
 apt -y install vnstat
 /etc/init.d/vnstat restart
 apt -y install libsqlite3-dev
@@ -305,7 +304,7 @@ END
 cat > /etc/systemd/system/stunnel5.service << END
 [Unit]
 Description=Stunnel5 Service
-Documentation=https://t.me/anuybazoelk
+Documentation=https://t.me/onvaovpn
 Documentation=https://github.com/muhammadnoor674
 After=syslog.target network-online.target
 
@@ -406,7 +405,7 @@ netfilter-persistent reload
 cd /usr/bin
 wget -O addhost "https://${akbarvpn}/addhost.sh"
 wget -O about "https://${akbarvpn}/about.sh"
-wget -O menu "https://raw.githubusercontent.com/mrtunneldo2024/newsc/refs/heads/main/update/menu.sh"
+wget -O menu "https://raw.githubusercontent.com/muzaffer72/newsc/refs/heads/main/update/menu.sh"
 wget -O addssh "https://${akbarvpn}/addssh.sh"
 wget -O trialssh "https://${akbarvpn}/trialssh.sh"
 wget -O delssh "https://${akbarvpn}/delssh.sh"
@@ -449,22 +448,22 @@ wget -O addtrgo "https://${akbarvpnnn}/addtrgo.sh"
 wget -O deltrgo "https://${akbarvpnnn}/deltrgo.sh"
 wget -O renewtrgo "https://${akbarvpnnn}/renewtrgo.sh"
 wget -O cektrgo "https://${akbarvpnnn}/cektrgo.sh"
-wget -O portsshnontls "https://raw.githubusercontent.com/mrtunneldo2024/newsc/refs/heads/main/websocket/portsshnontls.sh"
-wget -O portsshws "https://raw.githubusercontent.com/mrtunneldo2024/newsc/refs/heads/main/websocket/portsshws.sh"
+wget -O portsshnontls "https://raw.githubusercontent.com/muzaffer72/newsc/refs/heads/main/websocket/portsshnontls.sh"
+wget -O portsshws "https://raw.githubusercontent.com/muzaffer72/newsc/refs/heads/main/websocket/portsshws.sh"
 
-wget -O sshovpnmenu "https://raw.githubusercontent.com/mrtunneldo2024/newsc/refs/heads/main/update/sshovpn.sh"
-wget -O l2tpmenu "https://raw.githubusercontent.com/mrtunneldo2024/newsc/refs/heads/main/update/l2tpmenu.sh"
-wget -O pptpmenu "https://raw.githubusercontent.com/mrtunneldo2024/newsc/refs/heads/main/update/pptpmenu.sh"
-wget -O sstpmenu "https://raw.githubusercontent.com/mrtunneldo2024/newsc/refs/heads/main/update/sstpmenu.sh"
-wget -O wgmenu "https://raw.githubusercontent.com/mrtunneldo2024/newsc/refs/heads/main/update/wgmenu.sh"
-wget -O ssmenu "https://raw.githubusercontent.com/mrtunneldo2024/newsc/refs/heads/main/update/ssmenu.sh"
-wget -O ssrmenu "https://raw.githubusercontent.com/mrtunneldo2024/newsc/refs/heads/main/update/ssrmenu.sh"
-wget -O vmessmenu "https://raw.githubusercontent.com/mrtunneldo2024/newsc/refs/heads/main/update/vmessmenu.sh"
-wget -O vlessmenu "https://raw.githubusercontent.com/mrtunneldo2024/newsc/refs/heads/main/update/vlessmenu.sh"
-wget -O trmenu "https://raw.githubusercontent.com/mrtunneldo2024/newsc/refs/heads/main/update/trmenu.sh"
-wget -O trgomenu "https://raw.githubusercontent.com/mrtunneldo2024/newsc/refs/heads/main/update/trgomenu.sh"
-wget -O setmenu "https://raw.githubusercontent.com/mrtunneldo2024/newsc/refs/heads/main/update/setmenu.sh"
-wget -O running "https://raw.githubusercontent.com/mrtunneldo2024/newsc/refs/heads/main/update/running.sh"
+wget -O sshovpnmenu "https://raw.githubusercontent.com/muzaffer72/newsc/refs/heads/main/update/sshovpn.sh"
+wget -O l2tpmenu "https://raw.githubusercontent.com/muzaffer72/newsc/refs/heads/main/update/l2tpmenu.sh"
+wget -O pptpmenu "https://raw.githubusercontent.com/muzaffer72/newsc/refs/heads/main/update/pptpmenu.sh"
+wget -O sstpmenu "https://raw.githubusercontent.com/muzaffer72/newsc/refs/heads/main/update/sstpmenu.sh"
+wget -O wgmenu "https://raw.githubusercontent.com/muzaffer72/newsc/refs/heads/main/update/wgmenu.sh"
+wget -O ssmenu "https://raw.githubusercontent.com/muzaffer72/newsc/refs/heads/main/update/ssmenu.sh"
+wget -O ssrmenu "https://raw.githubusercontent.com/muzaffer72/newsc/refs/heads/main/update/ssrmenu.sh"
+wget -O vmessmenu "https://raw.githubusercontent.com/muzaffer72/newsc/refs/heads/main/update/vmessmenu.sh"
+wget -O vlessmenu "https://raw.githubusercontent.com/muzaffer72/newsc/refs/heads/main/update/vlessmenu.sh"
+wget -O trmenu "https://raw.githubusercontent.com/muzaffer72/newsc/refs/heads/main/update/trmenu.sh"
+wget -O trgomenu "https://raw.githubusercontent.com/muzaffer72/newsc/refs/heads/main/update/trgomenu.sh"
+wget -O setmenu "https://raw.githubusercontent.com/muzaffer72/newsc/refs/heads/main/update/setmenu.sh"
+wget -O running "https://raw.githubusercontent.com/muzaffer72/newsc/refs/heads/main/update/running.sh"
 wget -O cekxray "https://raw.githubusercontent.com/myridwan/src/ipuk/cekxray.sh"
 
 chmod +x portsshnontls

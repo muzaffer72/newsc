@@ -1,7 +1,7 @@
 #!/bin/bash
-#warna
+#renk
 # ==========================================
-# Color
+# Renk
 RED='\033[0;31m'
 NC='\033[0m'
 GREEN='\033[0;32m'
@@ -12,26 +12,26 @@ CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 # ==========================================
 
-#cek port dan tampilkan
+#portu kontrol et ve göster
 
 ws="$(cat ~/log-install.txt | grep -w "Websocket None TLS" | cut -d: -f2|sed 's/ //g')"
 
-#input port untuk pengganti
+#değiştirilecek portu gir
 echo -e "======================================"
 echo -e ""
-echo -e "Change Port $ws"
+echo -e "Portu Değiştir $ws"
 echo -e ""
 echo -e "======================================"
-read -p "New Port SSH WS : " ws2
+read -p "Yeni SSH WS Portu : " ws2
 if [ -z $ws2 ]; then
-echo "Please Input Port"
+echo "Lütfen Portu Girin"
 exit 0
 fi
 cek=$(netstat -nutlp | grep -w $ws2)
 if [[ -z $cek ]]; then
 
 
-#ganti port layanan
+#servis portunu değiştir
 sed -i "s/$ws/$ws2/g" /etc/default/sslh
 sed -i "s/   - Websocket None TLS      : $ws/   - Websocket None TLS      : $ws2/g" /root/log-install.txt
 
@@ -50,13 +50,13 @@ systemctl restart sslh
 systemctl daemon-reload
 systemctl restart ws-nontls > /dev/null
 
-#ganti port info
+#bilgi portunu değiştir
 
-echo -e "\e[032;1mPort $ws2 modified successfully\e[0m"
+echo -e "\e[032;1mPort $ws2 başarıyla değiştirildi\e[0m"
 else
-echo "Port $ws2 is used"
+echo "Port $ws2 kullanılıyor"
 fi
 
 
 
-#done 
+#tamamlandı 

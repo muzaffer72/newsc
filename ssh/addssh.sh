@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ==========================================
-# Color
+# Renk
 RED='\033[0;31m'
 NC='\033[0m'
 GREEN='\033[0;32m'
@@ -11,36 +11,36 @@ PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 # ==========================================
-# Getting
-export CHATID="1328284490"
-export KEY="8068817658:AAFg9G7lJq7UMoF94EN8ihraoT5DQaJgbfw"
+# Alınıyor
+export CHATID="989061293"
+export KEY="7721006940:AAHD_7QqIdBOGyOB2JVBS0bEsAOTmoYiqLs"
 export TIME="10"
 export URL="https://api.telegram.org/bot$KEY/sendMessage"
 clear
 MYIP=$(wget -qO- icanhazip.com);
-IZIN=$( curl https://mrtunneldo2024.github.io/ip | grep $MYIP )
-echo "Memeriksa Hak Akses VPS..."
+
+echo "VPS Erişim Haklarını Kontrol ediliyor..."
 if [ $MYIP = $IZIN ]; then
-echo -e "${NC}${GREEN}Permission Accepted...${NC}"
+echo -e "${NC}${GREEN}İzin Kabul Edildi...${NC}"
 else
-echo -e "${NC}${RED}Permission Denied!${NC}";
-echo -e "${NC}${LIGHT}Please Contact Admin!!"
+echo -e "${NC}${RED}İzin Reddedildi!${NC}";
+echo -e "${NC}${LIGHT}Lütfen Yönetici ile İletişime Geçin!!${NC}"
 echo -e "${NC}${LIGHT}Facebook : https://m.facebook.com/Anuybazoelk639"
 echo -e "${NC}${LIGHT}WhatsApp : https://wa.me/6285349326511"
 echo -e "${NC}${LIGHT}WhatsApp : https://wa.me/6287728411949"
 echo -e "${NC}${LIGHT}Youtube  : youtube.com/@anuy63"
-echo -e "${NC}${LIGHT}Telegram : https://t.me/anuybazoelk"
+echo -e "${NC}${LIGHT}Telegram : https://t.me/onvaovpn"
 echo -e "${NC}${LIGHT}Telegram : https;//t.me/anuybazoelk639"
 exit 0
 fi
 clear
-echo "Checking VPS"
+echo "VPS Kontrol Ediliyor"
 clear
 domain=$(cat /etc/xray/domain)
 clear
-read -p "Username : " Login
-read -p "Password : " Pass
-read -p "Expired (Days): " masaaktif
+read -p "Kullanıcı Adı : " Login
+read -p "Şifre : " Pass
+read -p "Süre (Gün): " masaaktif
 
 IP=$(wget -qO- ipinfo.io/ip);
 ws="$(cat ~/log-install.txt | grep -w "Websocket TLS" | cut -d: -f2|sed 's/ //g')"
@@ -57,7 +57,7 @@ systemctl restart ssh-ohp
 systemctl restart dropbear-ohp
 systemctl restart openvpn-ohp
 useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
-expi="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
+expi="$(chage -l $Login | grep "Hesap süresi dolar" | awk -F": " '{print $2}')"
 echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
 hariini=`date -d "0 days" +"%Y-%m-%d"`
 expi=`date -d "$masaaktif days" +"%Y-%m-%d"`
@@ -89,10 +89,10 @@ URL="$URL"
 TEXT="<code>====================</code>
 <code>SSH PREMIUM BZ OFFICIAL</code>
 <code>====================</code>
-<code>Remarks   : ${user}
-Domain         : ${domain}
-Username       : $Login 
-Password       : $Pass
+<code>Not       : ${user}
+Alan Adı         : ${domain}
+Kullanıcı Adı    : $Login 
+Şifre          : $Pass
 Dropbear       : 109, 143
 SSL/TLS        : $ssl
 Port Squid     : $sqd
@@ -103,7 +103,7 @@ Ovpn TCP       : $ovpn
 Ovpn UDP       : $ovpn2
 Ovpn SSL       : 990 
 BadVpn         : 7100-7200-7300
-Name      : SSH</code>
+Adı            : SSH</code>
 <code>====================</code>
 <code>PAYLOAD WS TLS</code>
 <code>====================</code>
@@ -119,10 +119,10 @@ OVPN TCP       : http://${domain}:89/tcp.ovpn
 OVPN UDP       : http://${domain}:89/udp.ovpn
 OVPN SSL       : http://${domain}:89/ssl.ovpn
 <code>====================</code>
-Dibuat Pada    : $hariini
-Berakhir Pada  : $expi
+Oluşturulma Tarihi    : $hariini
+Bitiş Tarihi  : $expi
 Whatsapp       : https://wa.me/6287728411949
-Telegram       : https://t.me/anuybazoelk
+Telegram       : https://t.me/onvaovpn
 <code>====================</code>
 "
 
@@ -133,10 +133,10 @@ echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━�
 echo -e "\E[44;1;39m      ⇱ SSH PREMIUM BZ OFFICIAL STORE ⇲          \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e
-ecjo -e "IP/Host        : $IP "
-echo -e "Domain         : ${domain} "
-echo -e "Username       : $Login "
-echo -e "Password       : $Pass "
+ecjo -e "IP/Sunucu      : $IP "
+echo -e "Alan Adı       : ${domain} "
+echo -e "Kullanıcı Adı  : $Login "
+echo -e "Şifre          : $Pass "
 echo -e "Dropbear       : 109, 143 "
 echo -e "SSL/TLS        : $ssl "
 echo -e "Port Squid     : $sqd "
@@ -160,8 +160,8 @@ echo -e "\E[44;1;39m      ⇱ Payload Websocket No Tls ⇲          \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "GET / HTTP/1.1[crlf]Host: ${domain}[crlf]Content-Lenght: @anuybazoelk639[crlf]Upgrade: Websocket[crlf][crlf]"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "\E[44;1;39m      ⇱ Created        : $hariini ⇲          \E[0m"
-echo -e "\E[44;1;39m      ⇱ Expired        : $expi ⇲          \E[0m"
+echo -e "\E[44;1;39m      ⇱ Oluşturulma    : $hariini ⇲          \E[0m"
+echo -e "\E[44;1;39m      ⇱ Bitiş          : $expi ⇲          \E[0m"
 echo -e "\E[44;1;39m      ⇱ Whatsapp       : https://wa.me/6287728411949 ⇲          \E[0m"
-echo -e "\E[44;1;39m      ⇱ Telegram       : https://t.me/anuybazoelk ⇲          \E[0m"
+echo -e "\E[44;1;39m      ⇱ Telegram       : https://t.me/onvaovpn ⇲          \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"

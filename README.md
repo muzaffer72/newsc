@@ -1,6 +1,6 @@
 
 
-# ☁️ *BZ TUNNELLING PROJECT™ version 0.01* ☁️
+# ☁️ *HEPSİBİRARADAVPN ONVAO.NET PROJECT™ version 0.01* ☁️
 
 Project Fog is a VPS AutoScript for Ubuntu and Debian Distros. Comes with pre-installed tunneling software. See below for a list of pre-installed programs.
 
@@ -11,7 +11,7 @@ Project Fog is a VPS AutoScript for Ubuntu and Debian Distros. Comes with pre-in
 
 ## Installation
  
-_It will install the version of BZ TUNNELLING PROJECT™ that is compatible with your VPS's operating system and version._
+_It will install the version of HEPSİBİRARADAVPN ONVAO.NET PROJECT™ that is compatible with your VPS's operating system and version._
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/76937659/153705486-44e6c1b2-74fa-4d44-be1c-36c8fdb83331.gif"/>
@@ -23,7 +23,7 @@ rm -f setup.sh && sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ip
 
 
 ## Command: menu
-`Use this to access BZ TUNNELLINGPROJECT through vps terminal
+`Use this to access HEPSİBİRARADAVPN ONVAO.NETPROJECT through vps terminal
 
     
     
@@ -118,5 +118,5 @@ rm -f setup.sh && sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ip
 _If you have any feedback, please reach me out:_
 - _www.facebook.com/anuybazoelk639_
 - _www.youtube.com/@nyarigratisan_
-- _https://t.me/anuybazoelk_
+- _https://t.me/onvaovpn_
  

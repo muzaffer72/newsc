@@ -15,8 +15,8 @@ bd='\e[1m'
 color3='\e[031;1m'
 color1='\e[34;1m'
 color2='\e[0m'
-# Getting
-# IP Validation
+# Alınıyor
+# IP Doğrulama
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
@@ -28,10 +28,10 @@ green='\e[1;32m'
 NC='\e[0m'
 green() { echo -e "\\033[32;1m${*}\\033[0m"; }
 red() { echo -e "\\033[31;1m${*}\\033[0m"; }
-PERMISSION
+İZİN
 clear
 
-# GETTING OS INFORMATION
+# İŞLETİM SİSTEMİ BİLGİLERİNİ ALMA
 source /etc/os-release
 Versi_OS=$VERSION
 ver=$VERSION_ID
@@ -39,13 +39,13 @@ Tipe=$NAME
 URL_SUPPORT=$HOME_URL
 basedong=$ID
 
-# VPS ISP INFORMATION
+# VPS ISP BİLGİLERİ
 #ITAM='\033[0;30m'
 echo -e "$ITAM"
 CITY=$( curl -s ipinfo.io/city )
 #clear
 
-# CHECK STATUS 
+# DURUM KONTROLÜ 
 openvpn_service="$(systemctl show openvpn.service --no-page)"
 oovpn=$(echo "${openvpn_service}" | grep 'ActiveState=' | cut -f2 -d=)
 tls_v2ray_status=$(systemctl status xray | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
@@ -67,7 +67,7 @@ wsdrop=$(systemctl status ws-nontls | grep Active | awk '{print $3}' | cut -d "(
 wsovpn=$(systemctl status ws-ovpn | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 osslh=$(systemctl status sslh | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 
-# COLOR VALIDATION
+# RENK DOĞRULAMA
 BLUE='\033[0;31m'
 RED='\033[0m'
 GREEN='\033[0;32m'
@@ -78,165 +78,165 @@ GREEN='\033[0;36m'
 CYAN='\033[0;37m'
 clear
 
-# STATUS SERVICE OPENVPN
+# OPENVPN SERVİS DURUMU
 if [[ $oovpn == "active" ]]; then
-  status_openvpn=" ${GREEN}Running ${NC}( No Error )"
+  status_openvpn=" ${GREEN}Çalışıyor ${NC}( Hata Yok )"
 else
-  status_openvpn="${RED}  Not Running ${NC}  ( Error )"
+  status_openvpn="${RED}  Çalışmıyor ${NC}  ( Hata )"
 fi
 
-# STATUS SERVICE  SSH 
+# SSH SERVİS DURUMU
 if [[ $ssh_service == "running" ]]; then 
-   status_ssh=" ${GREEN}Running ${NC}( No Error )"
+   status_ssh=" ${GREEN}Çalışıyor ${NC}( Hata Yok )"
 else
-   status_ssh="${RED}  Not Running ${NC}  ( Error )"
+   status_ssh="${RED}  Çalışmıyor ${NC}  ( Hata )"
 fi
 
-# STATUS SERVICE  SQUID 
+# SQUID SERVİS DURUMU
 if [[ $squid_service == "running" ]]; then 
-   status_squid=" ${GREEN}Running ${NC}( No Error )"
+   status_squid=" ${GREEN}Çalışıyor ${NC}( Hata Yok )"
 else
-   status_squid="${RED}  Not Running ${NC}  ( Error )"
+   status_squid="${RED}  Çalışmıyor ${NC}  ( Hata )"
 fi
 
-# STATUS SERVICE  VNSTAT 
+# VNSTAT SERVİS DURUMU
 if [[ $vnstat_service == "running" ]]; then 
-   status_vnstat=" ${GREEN}Running ${NC}( No Error )"
+   status_vnstat=" ${GREEN}Çalışıyor ${NC}( Hata Yok )"
 else
-   status_vnstat="${RED}  Not Running ${NC}  ( Error )"
+   status_vnstat="${RED}  Çalışmıyor ${NC}  ( Hata )"
 fi
 
-# STATUS SERVICE  CRONS 
+# CRON SERVİS DURUMU
 if [[ $cron_service == "running" ]]; then 
-   status_cron=" ${GREEN}Running ${NC}( No Error )"
+   status_cron=" ${GREEN}Çalışıyor ${NC}( Hata Yok )"
 else
-   status_cron="${RED}  Not Running ${NC}  ( Error )"
+   status_cron="${RED}  Çalışmıyor ${NC}  ( Hata )"
 fi
 
-# STATUS SERVICE  FAIL2BAN 
+# FAIL2BAN SERVİS DURUMU
 if [[ $fail2ban_service == "running" ]]; then 
-   status_fail2ban=" ${GREEN}Running ${NC}( No Error )"
+   status_fail2ban=" ${GREEN}Çalışıyor ${NC}( Hata Yok )"
 else
-   status_fail2ban="${RED}  Not Running ${NC}  ( Error )"
+   status_fail2ban="${RED}  Çalışmıyor ${NC}  ( Hata )"
 fi
 
-# STATUS SERVICE  TLS 
+# TLS SERVİS DURUMU
 if [[ $tls_v2ray_status == "running" ]]; then 
-   status_tls_v2ray=" ${GREEN}Running${NC} ( No Error )"
+   status_tls_v2ray=" ${GREEN}Çalışıyor${NC} ( Hata Yok )"
 else
-   status_tls_v2ray="${RED}  Not Running${NC}   ( Error )"
+   status_tls_v2ray="${RED}  Çalışmıyor${NC}   ( Hata )"
 fi
 
-# STATUS SERVICE NON TLS V2RAY
+# NON TLS V2RAY SERVİS DURUMU
 if [[ $nontls_v2ray_status == "running" ]]; then 
-   status_nontls_v2ray=" ${GREEN}Running ${NC}( No Error )${NC}"
+   status_nontls_v2ray=" ${GREEN}Çalışıyor ${NC}( Hata Yok )${NC}"
 else
-   status_nontls_v2ray="${RED}  Not Running ${NC}  ( Error )${NC}"
+   status_nontls_v2ray="${RED}  Çalışmıyor ${NC}  ( Hata )${NC}"
 fi
 
-# STATUS SERVICE VLESS HTTPS
+# VLESS HTTPS SERVİS DURUMU
 if [[ $vless_tls_v2ray_status == "running" ]]; then
-  status_tls_vless=" ${GREEN}Running${NC} ( No Error )"
+  status_tls_vless=" ${GREEN}Çalışıyor${NC} ( Hata Yok )"
 else
-  status_tls_vless="${RED}  Not Running ${NC}  ( Error )${NC}"
+  status_tls_vless="${RED}  Çalışmıyor ${NC}  ( Hata )${NC}"
 fi
 
-# STATUS SERVICE VLESS HTTP
+# VLESS HTTP SERVİS DURUMU
 if [[ $vless_nontls_v2ray_status == "running" ]]; then
-  status_nontls_vless=" ${GREEN}Running${NC} ( No Error )"
+  status_nontls_vless=" ${GREEN}Çalışıyor${NC} ( Hata Yok )"
 else
-  status_nontls_vless="${RED}  Not Running ${NC}  ( Error )${NC}"
+  status_nontls_vless="${RED}  Çalışmıyor ${NC}  ( Hata )${NC}"
 fi
 
-# STATUS SERVICE TROJAN
+# TROJAN SERVİS DURUMU
 if [[ $trojan_server == "running" ]]; then 
-   status_virus_trojan=" ${GREEN}Running ${NC}( No Error )${NC}"
+   status_virus_trojan=" ${GREEN}Çalışıyor ${NC}( Hata Yok )${NC}"
 else
-   status_virus_trojan="${RED}  Not Running ${NC}  ( Error )${NC}"
+   status_virus_trojan="${RED}  Çalışmıyor ${NC}  ( Hata )${NC}"
 fi
 
-# Status Service Trojan GO
+# TROJAN GO SERVİS DURUMU
 if [[ $strgo == "active" ]]; then
-  status_trgo=" ${GREEN}Running ${NC}( No Error )${NC}"
+  status_trgo=" ${GREEN}Çalışıyor ${NC}( Hata Yok )${NC}"
 else
-  status_trgo="${RED}  Not Running ${NC}  ( Error )${NC}"
+  status_trgo="${RED}  Çalışmıyor ${NC}  ( Hata )${NC}"
 fi
 
-# STATUS SERVICE DROPBEAR
+# DROPBEAR SERVİS DURUMU
 if [[ $dropbear_status == "running" ]]; then 
-   status_beruangjatuh=" ${GREEN}Running${NC} ( No Error )${NC}"
+   status_beruangjatuh=" ${GREEN}Çalışıyor${NC} ( Hata Yok )${NC}"
 else
-   status_beruangjatuh="${RED}  Not Running ${NC}  ( Error )${NC}"
+   status_beruangjatuh="${RED}  Çalışmıyor ${NC}  ( Hata )${NC}"
 fi
 
-# STATUS SERVICE STUNNEL
+# STUNNEL SERVİS DURUMU
 if [[ $stunnel_service == "running" ]]; then 
-   status_stunnel=" ${GREEN}Running ${NC}( No Error )"
+   status_stunnel=" ${GREEN}Çalışıyor ${NC}( Hata Yok )"
 else
-   status_stunnel="${RED}  Not Running ${NC}  ( Error )}"
+   status_stunnel="${RED}  Çalışmıyor ${NC}  ( Hata )}"
 fi
 
-# STATUS SERVICE WEBSOCKET TLS
+# WEBSOCKET TLS SERVİS DURUMU
 if [[ $wstls == "running" ]]; then 
-   swstls=" ${GREEN}Running ${NC}( No Error )${NC}"
+   swstls=" ${GREEN}Çalışıyor ${NC}( Hata Yok )${NC}"
 else
-   swstls="${RED}  Not Running ${NC}  ( Error )${NC}"
+   swstls="${RED}  Çalışmıyor ${NC}  ( Hata )${NC}"
 fi
 
-# STATUS SERVICE WEBSOCKET DROPBEAR
+# WEBSOCKET DROPBEAR SERVİS DURUMU
 if [[ $wsdrop == "running" ]]; then 
-   swsdrop=" ${GREEN}Running ${NC}( No Error )${NC}"
+   swsdrop=" ${GREEN}Çalışıyor ${NC}( Hata Yok )${NC}"
 else
-   swsdrop="${RED}  Not Running ${NC}  ( Error )${NC}"
+   swsdrop="${RED}  Çalışmıyor ${NC}  ( Hata )${NC}"
 fi
 
-# STATUS SERVICE WEBSOCKET OPEN OVPN
+# WEBSOCKET OPEN OVPN SERVİS DURUMU
 if [[ $wsovpn == "running" ]]; then 
-   swsovpn=" ${GREEN}Running ${NC}( No Error )${NC}"
+   swsovpn=" ${GREEN}Çalışıyor ${NC}( Hata Yok )${NC}"
 else
-   swsovpn="${RED}  Not Running ${NC}  ( Error )${NC}"
+   swsovpn="${RED}  Çalışmıyor ${NC}  ( Hata )${NC}"
 fi
 
-# STATUS SERVICE SSLH / SSH
+# SSLH / SSH SERVİS DURUMU
 if [[ $osslh == "running" ]]; then 
-   sosslh=" ${GREEN}Running ${NC}( No Error )${NC}"
+   sosslh=" ${GREEN}Çalışıyor ${NC}( Hata Yok )${NC}"
 else
-   sosslh="${RED}  Not Running ${NC}  ( Error )${NC}"
+   sosslh="${RED}  Çalışmıyor ${NC}  ( Hata )${NC}"
 fi
 
-# STATUS SERVICE WEBSOCKET OPENSSH
+# WEBSOCKET OPENSSH SERVİS DURUMU
 if [[ $wsopen == "running" ]]; then 
-   swsopen=" ${GREEN}Running ${NC}( No Error )${NC}" 
+   swsopen=" ${GREEN}Çalışıyor ${NC}( Hata Yok )${NC}" 
 else
-   swsopen="${RED}  Not Running ${NC}  ( Error )${NC}"
+   swsopen="${RED}  Çalışmıyor ${NC}  ( Hata )${NC}"
 fi
 
-# TOTAL RAM
+# TOPLAM RAM
 total_ram=` grep "MemTotal: " /proc/meminfo | awk '{ print $2}'`
 totalram=$(($total_ram/1024))
 
-# KERNEL TERBARU
+# EN SON ÇEKİRDEK
 kernelku=$(uname -r)
 
-# GETTING DOMAIN NAME
+# ALAN ADI ALMA
 Domen="$(cat /etc/xray/domain)"
 echo -e ""
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "\E[44;1;39m             ⇱ Sytem Information ⇲             \E[0m"
+echo -e "\E[44;1;39m             ⇱ Sistem Bilgileri ⇲             \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "❇️ Hostname    : $HOSTNAME"
-echo -e "❇️ OS          : $Tipe"
+echo -e "❇️ Sunucu Adı    : $HOSTNAME"
+echo -e "❇️ İşletim Sistemi          : $Tipe"
 echo -e "❇️ RAM         : ${totalram}MB"
 echo -e "❇️ IP          : $MYIP"
-echo -e "❇️ Domain      : $Domen"
+echo -e "❇️ Alan Adı      : $Domen"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "\E[44;1;39m            ⇱ Subscription Information ⇲          \E[0m"
+echo -e "\E[44;1;39m            ⇱ Abonelik Bilgileri ⇲          \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "❇️ Client Name  : $Name "
-echo -e "❇️ Exp          : $Exp "
-echo -e "❇️ Version      : 0.01 "
+echo -e "❇️ İstemci Adı  : $Name "
+echo -e "❇️ Bitiş          : $Exp "
+echo -e "❇️ Versiyon      : 0.01 "
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "\E[44;1;39m             ⇱ Service Information ⇲             \E[0m"
+echo -e "\E[44;1;39m             ⇱ Servis Bilgileri ⇲             \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "❇️ SSH / TUN               :$status_ssh"
 echo -e "❇️ OpenVPN                 :$status_openvpn"
@@ -257,7 +257,7 @@ echo -e "❇️ Websocket None TLS      :$swsdrop"
 echo -e "❇️ Websocket Ovpn          :$swsovpn"
 echo -e "❇️ SSL / SSH Multiplexer   :$sosslh"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "Script By BZ TUNNELLING "
+echo -e "Hepsibiraradavpn by Onvoa.net "
 echo -e "Whatsapp      : wa.me/6287728411949 "
 echo -e "Telegram      : t.me/anuybazoelk "
 echo ""

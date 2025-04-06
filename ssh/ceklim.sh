@@ -1,7 +1,7 @@
 #!/bin/bash
-# My Telegram : https://t.me/anuybazoelk
+# My Telegram : https://t.me/onvaovpn
 # ==========================================
-# Color
+# Renk
 RED='\033[0;31m'
 NC='\033[0m'
 GREEN='\033[0;32m'
@@ -11,40 +11,40 @@ PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 # ==========================================
-# Getting
+# Alınıyor
 MYIP=$(wget -qO- icanhazip.com);
-IZIN=$( curl https://mrtunneldo2024.github.io/ip | grep $MYIP )
-echo "Memeriksa Hak Akses VPS..."
+
+echo "VPS Erişim Haklarını Kontrol ediliyor..."
 if [ $MYIP = $IZIN ]; then
-echo -e "${NC}${GREEN}Permission Accepted...${NC}"
+echo -e "${NC}${GREEN}İzin Kabul Edildi...${NC}"
 else
-echo -e "${NC}${RED}Permission Denied!${NC}";
-echo -e "${NC}${LIGHT}Please Contact Admin!!"
+echo -e "${NC}${RED}İzin Reddedildi!${NC}";
+echo -e "${NC}${LIGHT}Lütfen Yönetici ile İletişime Geçin!!${NC}"
 echo -e "${NC}${LIGHT}Facebook : https://m.facebook.com/Anuybazoelk639"
 echo -e "${NC}${LIGHT}WhatsApp : https://wa.me/6285349326511"
 echo -e "${NC}${LIGHT}WhatsApp : https://wa.me/6287728411949"
 echo -e "${NC}${LIGHT}Youtube : youtube.com/@anuy63"
-echo -e "${NC}${LIGHT}Telegram : https://t.me/anuybazoelk"
+echo -e "${NC}${LIGHT}Telegram : https://t.me/onvaovpn"
 echo -e "${NC}${LIGHT}Telegram : https;//t.me/anuybazoelk639"
 exit 0
 fi
 clear
-echo "Checking VPS"
+echo "VPS Kontrol Ediliyor"
 clear
 echo " "
 echo "===========================================";
 echo " ";
 if [ -e "/root/log-limit.txt" ]; then
-echo "User Who Violate The Maximum Limit";
-echo "Time - Username - Number of Multilogin"
+echo "Maksimum Limiti İhlal Eden Kullanıcı";
+echo "Zaman - Kullanıcı Adı - Çoklu Oturum Açma Sayısı"
 echo "-------------------------------------";
 cat /root/log-limit.txt
 else
-echo " No user has committed a violation"
+echo " Hiçbir kullanıcı ihlalde bulunmadı"
 echo " "
-echo " or"
+echo " veya"
 echo " "
-echo " The user-limit script not been executed."
+echo " Kullanıcı sınırı betiği yürütülmedi."
 fi
 echo " ";
 echo "===========================================";

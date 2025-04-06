@@ -16,7 +16,7 @@ bd='\e[1m'
 color1='\e[031;1m'
 color2='\e[34;1m'
 color3='\e[0m'
-# COLOR VALIDATION
+# RENK DOĞRULAMA
 RED='\033[0;31m'
 NC='\033[0m'
 GREEN='\033[0;32m'
@@ -28,32 +28,32 @@ LIGHT='\033[0;37m'
 # =========================================
 echo -e ""
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "\E[44;1;39m          ⇱ Menu Utama NyariGratisan ⇲          \E[0m"
+echo -e "\E[44;1;39m          ⇱ Ana Menü NyariGratisan ⇲          \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "❇️ Script By : NyariGratisan"
-echo -e "❇️ Exp Script  : Unlimited"
-echo -e "❇️ Version     : Latest Version"
+echo -e "❇️ Betik Yazarı : NyariGratisan"
+echo -e "❇️ Betik Süresi : Sınırsız"
+echo -e "❇️ Versiyon     : En Son Sürüm"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "❇️ 1) SSH & OpenVPN MENU                                          "
-echo -e "❇️ 2) L2TP MENU                                                   "
-echo -e "❇️ 3) PPTP MENU                                                "
-echo -e "❇️ 4) SSTP MENU                                                "
-echo -e "❇️ 5) WIREGUARD MENU                                            "
-echo -e "❇️ 6) SHADOWSOCKS MENU                                          "
-echo -e "❇️ 7) SHADOWSOCKSR MENU                                          "
-echo -e "❇️ 8) VMESS MENU                                                 "
-echo -e "❇️ 9) VLESS MENU                                               "
-echo -e "❇️ 10) TROJAN GFW MENU                                         "
-echo -e "❇️ 11) TROJAN GO MENU                                            "
-echo -e "❇️ 12) CEK SERVICE VPS                                            "
-echo -e "❇️ 13) PENGATURAN                                                "
-echo -e "❇️ 14) CEK V2RAY "
-echo -e "❇️ 15) EDIT PATCH V2RAY "
-echo -e "❇️ 16) EXIT                                                        "
+echo -e "❇️ 1) SSH & OpenVPN MENÜSÜ                                          "
+echo -e "❇️ 2) L2TP MENÜSÜ                                                   "
+echo -e "❇️ 3) PPTP MENÜSÜ                                                "
+echo -e "❇️ 4) SSTP MENÜSÜ                                                "
+echo -e "❇️ 5) WIREGUARD MENÜSÜ                                            "
+echo -e "❇️ 6) SHADOWSOCKS MENÜSÜ                                          "
+echo -e "❇️ 7) SHADOWSOCKSR MENÜSÜ                                          "
+echo -e "❇️ 8) VMESS MENÜSÜ                                                 "
+echo -e "❇️ 9) VLESS MENÜSÜ                                               "
+echo -e "❇️ 10) TROJAN GFW MENÜSÜ                                         "
+echo -e "❇️ 11) TROJAN GO MENÜSÜ                                            "
+echo -e "❇️ 12) VPS SERVİS KONTROLÜ                                            "
+echo -e "❇️ 13) AYARLAR                                                "
+echo -e "❇️ 14) V2RAY KONTROLÜ "
+echo -e "❇️ 15) V2RAY YAPILANDIRMA DÜZENLEME "
+echo -e "❇️ 16) ÇIKIŞ                                                        "
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "\E[44;1;39m            ⇱ Script By NyariGratisan ⇲             \E[0m"
+echo -e "\E[44;1;39m            ⇱ NyariGratisan Tarafından Betik ⇲             \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-read -p "Select From Options [ 1 - 13 ] : " menu
+read -p "Seçeneklerden Birini Seçin [ 1 - 13 ] : " menu
 case $menu in
 1)
 clear

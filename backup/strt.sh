@@ -1,7 +1,7 @@
 #!/bin/bash
-# My Telegram : https://t.me/anuybazoelk
+# My Telegram : https://t.me/onvaovpn
 # ==========================================
-# Color
+# Renk
 RED='\033[0;31m'
 NC='\033[0m'
 GREEN='\033[0;32m'
@@ -11,20 +11,20 @@ PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 # ==========================================
-# Getting
+# Alınıyor
 MYIP=$(wget -qO- ipinfo.io/ip);
-echo "Checking VPS"
-IZIN=$( curl https://anuy639.github.io/izin | grep $MYIP )
+echo "VPS Kontrol Ediliyor"
+
 if [ $MYIP = $IZIN ]; then
-echo -e "${NC}${GREEN}Permission Accepted...${NC}"
+echo -e "${NC}${GREEN}İzin Kabul Edildi...${NC}"
 else
-echo -e "${NC}${RED}Permission Denied!${NC}";
-echo -e "${NC}${LIGHT}Please Contact Admin!!"
+echo -e "${NC}${RED}İzin Reddedildi!${NC}";
+echo -e "${NC}${LIGHT}Lütfen Yönetici ile İletişime Geçin!!${NC}"
 echo -e "${NC}${LIGHT}Facebook : https://m.facebook.com/Anuybazoelk639"
 echo -e "${NC}${LIGHT}WhatsApp : 085349326511"
 echo -e "${NC}${LIGHT}WhatsApp : 081774970898"
 echo -e "${NC}${LIGHT}Youtube : youtube.com/@nyarigratisan"
-echo -e "${NC}${LIGHT}Telegram : https://t.me/anuybazoelk"
+echo -e "${NC}${LIGHT}Telegram : https://t.me/onvaovpn"
 echo -e "${NC}${LIGHT}Telegram : https;//t.me/r1f4n_112"
 exit 0
 fi

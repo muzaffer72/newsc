@@ -1,5 +1,5 @@
 #!/bin/bash
-# My Telegram : https://t.me/anuybazoelk
+# My Telegram : https://t.me/onvaovpn
 # ==========================================
 # Color
 RED='\033[0;31m'
@@ -12,14 +12,14 @@ CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 # ==========================================
 # Getting
-export CHATID="1328284490"
-export KEY="8068817658:AAFg9G7lJq7UMoF94EN8ihraoT5DQaJgbfw"
+export CHATID="989061293"
+export KEY="7721006940:AAHD_7QqIdBOGyOB2JVBS0bEsAOTmoYiqLs"
 export TIME="10"
 export URL="https://api.telegram.org/bot$KEY/sendMessage"
 clear
 MYIP=$(wget -qO- icanhazip.com);
-IZIN=$( curl https://mrtunneldo2024.github.io/ip | grep $MYIP )
-echo "Memeriksa Hak Akses VPS..."
+
+echo "VPS Erişim Haklarını Kontrol ediliyor..."
 if [ $MYIP = $IZIN ]; then
 echo -e "${NC}${GREEN}Permission Accepted...${NC}"
 else
@@ -29,7 +29,7 @@ echo -e "${NC}${LIGHT}Facebook : https://m.facebook.com/Anuybazoelk639"
 echo -e "${NC}${LIGHT}WhatsApp : https://wa.me/6285349326511"
 echo -e "${NC}${LIGHT}WhatsApp : https://wa.me/6287728411949"
 echo -e "${NC}${LIGHT}Youtube : youtube.com/@anuy63"
-echo -e "${NC}${LIGHT}Telegram : https://t.me/anuybazoelk"
+echo -e "${NC}${LIGHT}Telegram : https://t.me/onvaovpn"
 echo -e "${NC}${LIGHT}Telegram : https;//t.me/anuybazoelk639"
 exit 0
 fi
@@ -104,7 +104,7 @@ service cron restart
 cat >/var/www/html/vmess-$user.txt <<-END
 
 ====================
-BZ TUNNELLING
+HEPSİBİRARADAVPN ONVAO.NET
 ====================
 wa.me/6287728411949
 t.me/anuybazoelk

@@ -16,7 +16,7 @@ bd='\e[1m'
 color3='\e[031;1m'
 color1='\e[34;1m'
 color2='\e[0m'
-# COLOR VALIDATION
+# RENK DOĞRULAMA
 BLUE='\033[0;31m'
 RED='\033[0m'
 GREEN='\033[0;32m'
@@ -29,19 +29,19 @@ echo -e ""
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "\E[44;1;39m            ⇱ TROJAN GO ⇲          \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e " 1) Create Trojan Go "
-echo -e " 2) Delete Trojan Go "
-echo -e " 3) Renew User"
-echo -e " 4) Check User "
-echo -e " 5) Back to Menu "
-echo -e " 6) exit "
+echo -e " 1) Trojan Go Oluştur "
+echo -e " 2) Trojan Go Sil "
+echo -e " 3) Kullanıcı Yenile"
+echo -e " 4) Kullanıcı Kontrol Et "
+echo -e " 5) Menüye Dön "
+echo -e " 6) Çıkış "
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "\E[44;1;39m            ⇱ Script By BZ TUNNELLING ⇲             \E[0m"
+echo -e "\E[44;1;39m            ⇱ Hepsibiraradavpn by Onvoa.net ⇲             \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "Whatsapp      : wa.me/6287728411949 "
 echo -e "Telegram      : t.me/anuybazoelk "
 echo ""
-read -p "Select From Options [ 1 - 6 ] : " menu
+read -p "Seçeneklerden Birini Seçin [ 1 - 6 ] : " menu
 echo -e ""
 case $menu in
 1)

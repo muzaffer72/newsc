@@ -1,7 +1,7 @@
 #!/bin/bash
-# My Telegram : https://t.me/anuybazoelk
+# My Telegram : https://t.me/onvaovpn
 # ==========================================
-# Color
+# Renk
 RED='\033[0;31m'
 NC='\033[0m'
 GREEN='\033[0;32m'
@@ -11,26 +11,26 @@ PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 # ==========================================
-# Getting
+# Alınıyor
 MYIP=$(wget -qO- icanhazip.com);
-IZIN=$( curl https://mrtunneldo2024.github.io/ip | grep $MYIP )
-echo "Memeriksa Hak Akses VPS..."
+
+echo "VPS Erişim Haklarını Kontrol ediliyor..."
 if [ $MYIP = $IZIN ]; then
 clear
-echo -e "${CYAN}Akses Diizinkan...${off}"
+echo -e "${CYAN}Erişim İzin Verildi...${off}"
 sleep 1
 else
 clear
-echo -e "${PURPLE}Akses Diblokir!${off}"
-echo "Hanya Untuk Pengguna Berbayar!"
-echo "Silahkan Hubungi Admin"
+echo -e "${PURPLE}Erişim Engellendi!${off}"
+echo "Sadece Ücretli Kullanıcılar İçin!"
+echo "Lütfen Yönetici ile İletişime Geçin"
 exit 0
 fi
 clear
-echo "Checking VPS"
+echo "VPS Kontrol Ediliyor"
 clear
                hariini=`date +%d-%m-%Y`
-               echo "Thank you for removing the EXPIRED USERS"
+               echo "SÜRESİ DOLMUŞ KULLANICILARI kaldırdığınız için teşekkür ederiz"
                echo "--------------------------------------"
                cat /etc/shadow | cut -d: -f1,8 | sed /:$/d > /tmp/expirelist.txt
                totalaccounts=`cat /tmp/expirelist.txt | wc -l`
@@ -51,17 +51,17 @@ clear
                username=$username" " 
                done
                bulantahun=`echo $tglexp |awk -F" " '{print $2,$6}'`
-               echo "echo "Expired- User : $username Expire at : $tgl $bulantahun"" >> /usr/local/bin/alluser
+               echo "echo "Süresi dolmuş Kullanıcı : $username Süresi dolacak : $tgl $bulantahun"" >> /usr/local/bin/alluser
                todaystime=`date +%s`
                if [ $userexpireinseconds -ge $todaystime ] ;
                then
 		    	:
                else
-               echo "echo "Expired- Username : $username are expired at: $tgl $bulantahun and removed : $hariini "" >> /usr/local/bin/deleteduser
-	           echo "Username $username that are expired at $tgl $bulantahun removed from the VPS $hariini"
+               echo "echo "Süresi dolmuş Kullanıcı : $username şurada süresi doldu: $tgl $bulantahun ve kaldırıldı : $hariini "" >> /usr/local/bin/deleteduser
+	           echo "Süresi dolan $username kullanıcı adı $tgl $bulantahun tarihinde VPS'den kaldırıldı $hariini"
                userdel $username
                fi
                done
                echo " "
                echo "--------------------------------------"
-               echo "Script are successfully run"
+               echo "Betik başarıyla çalıştırıldı"

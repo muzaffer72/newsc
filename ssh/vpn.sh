@@ -1,5 +1,5 @@
 #!/bin/bash
-# My Telegram : https://t.me/anuybazoelk
+# My Telegram : https://t.me/onvaovpn
 # ==========================================
 # Color
 RED='\033[0;31m'
@@ -13,8 +13,8 @@ LIGHT='\033[0;37m'
 # ==========================================
 # Getting
 MYIP=$(wget -qO- icanhazip.com);
-IZIN=$( curl https://mrtunneldo2024.github.io/ip | grep $MYIP )
-echo "Memeriksa Hak Akses VPS..."
+
+echo "VPS Erişim Haklarını Kontrol ediliyor..."
 if [ $MYIP = $IZIN ]; then
 clear
 echo -e "${CYAN}Akses Diizinkan...${off}"
@@ -29,7 +29,7 @@ fi
 clear
 echo "Checking VPS"
 clear
-# By Nyari Gratisan
+# By Muzaffer Şanlı
 # ==================================================
 # Link Hosting Kalian
 akbarvpn="raw.githubusercontent.com/myridwan/sc/ipuk/ssh"

@@ -16,7 +16,7 @@ bd='\e[1m'
 color3='\e[031;1m'
 color1='\e[34;1m'
 color2='\e[0m'
-# COLOR VALIDATION
+# RENK DOĞRULAMA
 BLUE='\033[0;31m'
 RED='\033[0m'
 GREEN='\033[0;32m'
@@ -27,26 +27,26 @@ GREEN='\033[0;36m'
 CYAN='\033[0;37m'
 echo -e ""
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "\E[44;1;39m            ⇱ Menu SSH BZ TUNNELLING ⇲          \E[0m"
+echo -e "\E[44;1;39m            ⇱ SSH Menüsü HEPSİBİRARADAVPN ONVAO.NET ⇲          \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e " 1) Create SSH & OpenVPN Account "
-echo -e " 2) Create SSH & OpenVPN Trial "
-echo -e " 3) SSH & OpenVPN Live "
-echo -e " 4) Check User Login SSH "
-echo -e " 5) Daftar Member SSH "
-echo -e " 6) Delete SSH "
-echo -e " 7) Delete User Expired SSH "
-echo -e " 8) Set up Autokill SSH "
-echo -e " 9) Displays Users Multi Login "
-echo -e " 10) Restart All Service "
-echo -e " 11) Menu Utama "
-echo -e " 12) EXIT "
+echo -e " 1) SSH & OpenVPN Hesabı Oluştur "
+echo -e " 2) SSH & OpenVPN Deneme Hesabı Oluştur "
+echo -e " 3) SSH & OpenVPN Hesap Süresini Uzat "
+echo -e " 4) SSH Kullanıcı Girişlerini Kontrol Et "
+echo -e " 5) SSH Üye Listesi "
+echo -e " 6) SSH Hesabını Sil "
+echo -e " 7) Süresi Dolmuş SSH Kullanıcılarını Sil "
+echo -e " 8) SSH Otomatik Kapatma Ayarları "
+echo -e " 9) Çoklu Giriş Yapan Kullanıcıları Göster "
+echo -e " 10) Tüm Servisleri Yeniden Başlat "
+echo -e " 11) Ana Menü "
+echo -e " 12) ÇIKIŞ "
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "\E[44;1;39m            ⇱ Script By BZ TUNNELLING ⇲             \E[0m"
+echo -e "\E[44;1;39m            ⇱ Hepsibiraradavpn by Onvoa.net ⇲             \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "Whatsapp      : wa.me/6287728411949 "
 echo -e "Telegram      : t.me/anuybazoelk "
-read -p "Select From Options [ 1 - 12 ] : " menu
+read -p "Seçeneklerden Birini Seçin [ 1 - 12 ] : " menu
 echo -e ""
 case $menu in
 1)
