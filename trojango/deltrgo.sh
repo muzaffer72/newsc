@@ -20,14 +20,7 @@ clear
 MYIP=$(wget -qO- icanhazip.com);
 
 echo "VPS Erişim Haklarını Kontrol ediliyor..."
-if [ $MYIP = $IZIN ]; then
-echo -e "${NC}${GREEN}İzin Kabul Edildi...${NC}"
-else
-echo -e "${NC}${RED}İzin Reddedildi!${NC}";
-echo -e "${NC}${LIGHT}Lütfen Yönetici ile İletişime Geçin!!${NC}"
-echo -e "${NC}${LIGHT}Telegram	: https://t.me/onvaovpn"
-exit 0
-fi
+
 clear
 echo "VPS Kontrol Ediliyor"
 clear

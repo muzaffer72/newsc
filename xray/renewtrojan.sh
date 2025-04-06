@@ -15,18 +15,7 @@ LIGHT='\033[0;37m'
 MYIP=$(wget -qO- icanhazip.com);
 
 echo "VPS Erişim Haklarını Kontrol ediliyor..."
-if [ $MYIP = $IZIN ]; then
-clear
-echo -e "${CYAN}Erişim İzin Verildi...${off}"
-sleep 1
-else
-clear
-echo -e "${PURPLE}Erişim Engellendi!${off}"
-echo "Sadece Ücretli Kullanıcılar İçin!"
-echo "Lütfen Yönetici ile İletişime Geçin"
-exit 0
-fi
-clear
+
 echo "VPS Kontrol Ediliyor"
 clear
 NUMBER_OF_CLIENTS=$(grep -c -E "^#&# " "/etc/xray/config.json")

@@ -20,16 +20,7 @@ LIGHT='\033[0;37m'
 # ==========================================
 # Alınıyor
 MYIP=$(wget -qO- ipinfo.io/ip);
-IZIN=$( curl https://raw.githubusercontent.com/muzaffer72/izinsc/main/ipvps | grep $MYIP )
-if [ $MYIP = $IZIN ]; then
-echo -e "${NC}${GREEN}İzin Kabul Edildi...${NC}"
-else
-echo -e "${NC}${RED}İzin Reddedildi!${NC}";
-echo -e "${NC}${LIGHT}Lütfen Yönetici ile İletişime Geçin!!${NC}"
-exit 0
-fi
-rm -f setup.sh
-clear
+
 if [ -f "/etc/xray/domain" ]; then
 echo "Betik Zaten Kurulu"
 exit 0

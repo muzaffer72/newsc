@@ -15,17 +15,7 @@ LIGHT='\033[0;37m'
 MYIP=$(wget -qO- icanhazip.com);
 
 echo "VPS Erişim Haklarını Kontrol ediliyor..."
-if [ $MYIP = $IZIN ]; then
-clear
-echo -e "${CYAN}Akses Diizinkan...${off}"
-sleep 1
-else
-clear
-echo -e "${PURPLE}Akses Diblokir!${off}"
-echo "Hanya Untuk Pengguna Berbayar!"
-echo "Silahkan Hubungi Admin"
-exit 0
-fi
+
 clear
 echo "Checking VPS"
 clear
@@ -55,7 +45,7 @@ echo "  Done Install Webmin  "
 echo "======================="
 echo "http://$IP:10000"
 echo "======================="
-echo "Script By NyariGratisan"
+echo "Muzaffer Şanlı Tarafından Oluşturuldu"
 }
 function restart () {
 echo " Restarting Webmin"
@@ -67,7 +57,7 @@ echo ""
 echo "======================="
 echo "  Done Restart Webmin  "
 echo "======================="
-echo "Script By NyariGratisan"
+echo "Muzaffer Şanlı Tarafından Oluşturuldu"
 }
 function uninstall () {
 echo " Removing Repositori Webmin"
@@ -82,7 +72,7 @@ echo ""
 echo "========================="
 echo "  Done Uninstall Webmin  "
 echo "========================="
-echo "Script By NyariGratisan"
+echo "Muzaffer Şanlı Tarafından Oluşturuldu"
 }
 if [[ "$cek" = "perl" ]]; then
 sts="${Info}"
@@ -94,9 +84,9 @@ echo -e ""
 echo -e "================================"
 echo -e "   Webmin Menu $sts        "
 echo -e "================================"
-echo -e "1.Install Webmin"
-echo -e "2.Restart Webmin"
-echo -e "3.Uninstall Webmin"
+echo -e "1. Webmin Yükle"
+echo -e "2.Webmini Yeniden Başlat"
+echo -e "3.Webmini Kaldır"
 echo -e "================================"
 read -rp "Please Enter The Correct Number : " -e num
 if [[ "$num" = "1" ]]; then
@@ -107,6 +97,6 @@ elif [[ "$num" = "3" ]]; then
 uninstall
 else
 clear
-echo " You Entered The Wrong Number"
+echo " Geçersiz değer girdiiniz."
 menu
 fi

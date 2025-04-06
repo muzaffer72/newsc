@@ -15,17 +15,7 @@ LIGHT='\033[0;37m'
 MYIP=$(wget -qO- icanhazip.com);
 
 echo "VPS Erişim Haklarını Kontrol ediliyor..."
-if [ $MYIP = $IZIN ]; then
-clear
-echo -e "${CYAN}Akses Diizinkan...${off}"
-sleep 1
-else
-clear
-echo -e "${PURPLE}Akses Diblokir!${off}"
-echo "Hanya Untuk Pengguna Berbayar!"
-echo "Silahkan Hubungi Admin"
-exit 0
-fi
+
 clear
 echo "Checking VPS"
 clear

@@ -20,20 +20,7 @@ clear
 MYIP=$(wget -qO- icanhazip.com);
 
 echo "VPS Erişim Haklarını Kontrol ediliyor..."
-if [ $MYIP = $IZIN ]; then
-echo -e "${NC}${GREEN}İzin Kabul Edildi...${NC}"
-else
-echo -e "${NC}${RED}İzin Reddedildi!${NC}";
-echo -e "${NC}${LIGHT}Lütfen Yönetici ile İletişime Geçin!!${NC}"
-echo -e "${NC}${LIGHT}Facebook : https://m.facebook.com/Anuybazoelk639"
-echo -e "${NC}${LIGHT}WhatsApp : https://wa.me/6285349326511"
-echo -e "${NC}${LIGHT}WhatsApp : https://wa.me/6287728411949"
-echo -e "${NC}${LIGHT}Youtube  : youtube.com/@anuy63"
-echo -e "${NC}${LIGHT}Telegram : https://t.me/onvaovpn"
-echo -e "${NC}${LIGHT}Telegram : https;//t.me/anuybazoelk639"
-exit 0
-fi
-clear
+
 echo "VPS Kontrol Ediliyor"
 clear
 domain=$(cat /etc/xray/domain)

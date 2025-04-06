@@ -15,19 +15,7 @@ LIGHT='\033[0;37m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "VPS Kontrol Ediliyor"
 
-if [ $MYIP = $IZIN ]; then
-echo -e "${NC}${GREEN}İzin Kabul Edildi...${NC}"
-else
-echo -e "${NC}${RED}İzin Reddedildi!${NC}";
-echo -e "${NC}${LIGHT}Lütfen Yönetici ile İletişime Geçin!!${NC}"
-echo -e "${NC}${LIGHT}Facebook : https://m.facebook.com/Anuybazoelk639"
-echo -e "${NC}${LIGHT}WhatsApp : 085349326511"
-echo -e "${NC}${LIGHT}WhatsApp : 081774970898"
-echo -e "${NC}${LIGHT}Youtube : youtube.com/@nyarigratisan"
-echo -e "${NC}${LIGHT}Telegram : https://t.me/onvaovpn"
-echo -e "${NC}${LIGHT}Telegram : https;//t.me/r1f4n_112"
-exit 0
-fi
+
 clear
 data=( `cat /etc/shadowsocks-libev/akun.conf | grep '^###' | cut -d ' ' -f 2`);
 now=`date +"%Y-%m-%d"`
