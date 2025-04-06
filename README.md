@@ -115,8 +115,6 @@ rm -f setup.sh && sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ip
  
  ## _Author_
 
-_If you have any feedback, please reach me out:_
-- _www.facebook.com/anuybazoelk639_
-- _www.youtube.com/@nyarigratisan_
+
 - _https://t.me/onvaovpn_
  

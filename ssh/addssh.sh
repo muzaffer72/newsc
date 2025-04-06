@@ -98,7 +98,7 @@ Adı            : SSH</code>
 <code>====================</code>
 <code>PAYLOAD WS NO TLS</code>
 <code>====================</code>
-<code>GET / HTTP/1.1[crlf]Host: ${domain}[crlf]Content-Lenght: @anuybazoelk639[crlf]Upgrade: Websocket[crlf][crlf]</code>
+<code>GET / HTTP/1.1[crlf]Host: ${domain}[crlf]Content-Lenght: @onvaovpn[crlf]Upgrade: Websocket[crlf][crlf]</code>
 <code>====================</code>
 <code>OVPN</code>
 <code>====================</code>
@@ -145,7 +145,7 @@ echo -e "GET ws://${domain}/chat HTTP/1.1[crlf]Keep-Alive-Connection-Close[crlf]
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "\E[44;1;39m      ⇱ Payload Websocket No Tls ⇲          \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "GET / HTTP/1.1[crlf]Host: ${domain}[crlf]Content-Lenght: @anuybazoelk639[crlf]Upgrade: Websocket[crlf][crlf]"
+echo -e "GET / HTTP/1.1[crlf]Host: ${domain}[crlf]Content-Lenght: @onvaovpn[crlf]Upgrade: Websocket[crlf][crlf]"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "\E[44;1;39m      ⇱ Oluşturulma    : $hariini ⇲          \E[0m"
 echo -e "\E[44;1;39m      ⇱ Bitiş          : $expi ⇲          \E[0m"

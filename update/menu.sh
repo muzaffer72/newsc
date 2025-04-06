@@ -28,9 +28,9 @@ LIGHT='\033[0;37m'
 # =========================================
 echo -e ""
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "\E[44;1;39m          ⇱ Ana Menü NyariGratisan ⇲          \E[0m"
+echo -e "\E[44;1;39m          ⇱ Ana Menü Muzaffer Şanlı ⇲          \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "❇️ Betik Yazarı : NyariGratisan"
+echo -e "❇️ Betik Yazarı : Muzaffer Şanlı"
 echo -e "❇️ Betik Süresi : Sınırsız"
 echo -e "❇️ Versiyon     : En Son Sürüm"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
@@ -51,7 +51,7 @@ echo -e "❇️ 14) V2RAY KONTROLÜ "
 echo -e "❇️ 15) V2RAY YAPILANDIRMA DÜZENLEME "
 echo -e "❇️ 16) ÇIKIŞ                                                        "
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "\E[44;1;39m            ⇱ NyariGratisan Tarafından Betik ⇲             \E[0m"
+echo -e "\E[44;1;39m            ⇱ Muzaffer Şanlı Tarafından Geliştirildi ⇲             \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 read -p "Seçeneklerden Birini Seçin [ 1 - 13 ] : " menu
 case $menu in
